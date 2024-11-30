@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaBars, FaTimes, FaHome, FaInfoCircle, FaConciergeBell, FaEnvelope } from 'react-icons/fa';
+import { FaBars, FaTimes, FaHome, FaInfoCircle, FaConciergeBell, FaCartArrowDown } from 'react-icons/fa';
 import './TopMenuBar.css';
 
 const TopMenuBar = () => {
@@ -8,6 +8,13 @@ const TopMenuBar = () => {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
+  const [isCartOpen, setIsCartOpen] = useState(false);
+
+    const toggleCart = () => {
+      setIsCartOpen(!isCartOpen);
+    };
+
   return (
     <div className="top-menu-bar">
       <div className="logo">BrandLogo</div>
@@ -35,9 +42,14 @@ const TopMenuBar = () => {
       <FaHome className="menu-icon" />
       <FaInfoCircle className="menu-icon" />
       <FaConciergeBell className="menu-icon" />
-      <FaEnvelope className="menu-icon" />
+      <FaCartArrowDown className="menu-icon" onMouseEnter={toggleCart} />
+      </div>
+
+      <div className={`cart ${isCartOpen ? 'cart-open' : ''}`}>
+        cart
       </div>
     </div>
+
   );
 };
 
