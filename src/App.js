@@ -1,23 +1,25 @@
-import logo from './logo.svg';
+import React from 'react';
+import TopMenuBar from './components/TopMenuBar';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <TopMenuBar />
+      <main>
+        <section id="home">
+          <h1>Welcome to Home</h1>
+        </section>
+        <section id="about">
+          <h1>About Us</h1>
+        </section>
+        <section id="services">
+          <h1>Our Services</h1>
+        </section>
+        <section id="contact">
+          <h1>Contact Us</h1>
+        </section>
+      </main>
     </div>
   );
 }
