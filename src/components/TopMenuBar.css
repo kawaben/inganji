@@ -11,8 +11,11 @@
   .logo {
     font-size: 1.5rem;
     font-weight: bold;
+    flex: 1;
   }
-  
+  .menu {
+    flex: 2;
+  }
   .menu a {
     margin: 0 1rem;
     text-decoration: none;
@@ -38,3 +41,41 @@
   .menu-icon:hover {
     color: #ffa500;
   }
+
+
+  /* Hamburger Icon */
+.hamburger {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .menu {
+      display: none; /* Hide the menu by default */
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      right: 0;
+      background-color: #333;
+      width: 100%;
+      padding: 1rem;
+    }
+  
+    .menu.menu-open {
+      display: flex; /* Show menu when open */
+    }
+  
+    .hamburger {
+      display: block; /* Show hamburger icon */
+      order: 3;
+    }
+    .logo {
+        order: 1;
+      }
+      .icons {
+        order: 2;
+      }
+  }
+  

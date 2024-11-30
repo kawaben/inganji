@@ -1,12 +1,22 @@
-import React from 'react';
-import { FaHome, FaInfoCircle, FaConciergeBell, FaEnvelope } from 'react-icons/fa'; // Import icons
+import React, { useState } from 'react';
+import { FaBars, FaTimes, FaHome, FaInfoCircle, FaConciergeBell, FaEnvelope } from 'react-icons/fa';
 import './TopMenuBar.css';
 
 const TopMenuBar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
   return (
     <div className="top-menu-bar">
       <div className="logo">BrandLogo</div>
-      <nav className="menu">
+
+      <div className="hamburger" onClick={toggleMenu}>
+        {isMenuOpen ? <FaTimes /> : <FaBars />}
+      </div>
+
+       <nav className={`menu ${isMenuOpen ? 'menu-open' : ''}`}>
         <a href="#home">
            link1
         </a>
