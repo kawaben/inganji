@@ -30,14 +30,13 @@ const TopMenuBar = () => {
            link4
         </a>
       </nav>
-
+        <div className="blankSpace"></div>
       <div className="icons">
       <FaHome className="menu-icon" />
       <FaInfoCircle className="menu-icon" />
       <FaConciergeBell className="menu-icon" />
       <FaEnvelope className="menu-icon" />
       </div>
-
     </div>
   );
 };
