@@ -84,12 +84,12 @@
      z-index: 1000;
      align-items: center;
      box-sizing: border-box;
-     justify-content:flex-start;
   }
   .cart.cart-open {
     right: 0; /* Slide in */
     display: flex;
   }
+
   /* Responsive Styles */
   @media (max-width: 768px) {
     .menu {
@@ -146,6 +146,10 @@
       position: fixed;
       height: 60px;
       z-index: 3000;
+     }
+
+     .cart{
+      width: 70%;
      }
   }
   

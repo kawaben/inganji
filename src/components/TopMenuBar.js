@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaBars, FaTimes, FaHome, FaInfoCircle, FaConciergeBell, FaCartArrowDown } from 'react-icons/fa';
+import { FaBars, FaTimes, FaSearch, FaBell, FaHeart, FaCartArrowDown } from 'react-icons/fa';
 import './TopMenuBar.css';
 
 const TopMenuBar = () => {
@@ -39,9 +39,9 @@ const TopMenuBar = () => {
       </nav>
         <div className="blankSpace"></div>
       <div className="icons">
-      <FaHome className="menu-icon" />
-      <FaInfoCircle className="menu-icon" />
-      <FaConciergeBell className="menu-icon" />
+      <FaSearch className="menu-icon" />
+      <FaBell className="menu-icon" />
+      <FaHeart className="menu-icon" />
       <FaCartArrowDown className="menu-icon" onMouseEnter={toggleCart} />
       </div>
 
