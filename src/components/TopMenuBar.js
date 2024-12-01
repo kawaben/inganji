@@ -91,9 +91,14 @@ const TopMenuBar = () => {
 
         <div className='blankSpace'></div>
         {toggles.map((toggle) => (
-          <div key={toggle.id} >
+          <div key={toggle.id} className={`toggle-item ${toggle.id === 5 ? "humburger" : ""}`} >
             <button className='icons' onClick={() => handleToggle(toggle.id)}>
-              {toggle.title}
+            {openToggle === toggle.id && toggle.id === 5 ? (
+              <FaTimes className="menu-icon" /> // Change to close icon
+            ) : (
+              toggle.title // Show default icon or title
+            )}
+              
             </button>
             {openToggle === toggle.id && (
               <div className="toggles">
