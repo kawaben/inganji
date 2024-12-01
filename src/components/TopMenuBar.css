@@ -41,17 +41,15 @@
     flex: 2;
   }
   .icons {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    text-decoration: none;
+    background-color: transparent;
     color: #fff;
-    transition: color 0.3s;
+    border: transparent;
 
   }
   .menu-icon {
     margin-right: 2rem;
     font-size: 1.2rem;
+    background-color: transparent;
   }
   .menu-icon:hover {
     color: #ffa500;
@@ -69,7 +67,7 @@
 
   .toggles{
     flex: 1;
-    display: block;
+    display: flex;
     position: fixed;
     top: 60px;
      right: 0;

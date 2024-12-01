@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import './TopMenuBar.css';
+
+import { FaBars, FaTimes, FaSearch, FaBell, FaHeart, FaCartArrowDown, FaShoppingCart } from 'react-icons/fa';
+
 /*import { FaBars, FaTimes, FaSearch, FaBell, FaHeart, FaCartArrowDown } from 'react-icons/fa';
 
   
@@ -57,11 +60,11 @@ const TopMenuBar = () => {
     };
 
     const toggles = [
-      { id: 1, title: "Search", content: "Search" },
-      { id: 2, title: "Notification", content: "Notification" },
-      { id: 3, title: "Favorite", content: "Favorite" },
-      { id: 4, title: "Cart", content: "Cart" },
-      { id: 5, title: "Humburger", content: "Humburger" },
+      { id: 1, title: <FaSearch className="menu-icon" />, content: "Search" },
+      { id: 2, title: <FaBell className="menu-icon" />, content: "Notification" },
+      { id: 3, title: <FaHeart className="menu-icon" />, content: "Favorite" },
+      { id: 4, title: <FaShoppingCart className="menu-icon" />, content: "Cart" },
+      { id: 5, title: <FaBars className="menu-icon" />, content: "Humburger" },
     ];
 
 
@@ -89,7 +92,7 @@ const TopMenuBar = () => {
         <div className='blankSpace'></div>
         {toggles.map((toggle) => (
           <div key={toggle.id} >
-            <button onClick={() => handleToggle(toggle.id)}>
+            <button className='icons' onClick={() => handleToggle(toggle.id)}>
               {toggle.title}
             </button>
             {openToggle === toggle.id && (
