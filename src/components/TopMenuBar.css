@@ -40,11 +40,15 @@
   .blankSpace{
     flex: 2;
   }
-  .icons {
-    background-color: transparent;
+  .icon {
+    background-color:transparent;
     color: #fff;
     border: transparent;
+  }
 
+  .icons{
+    display: flex;
+    align-items: center;
   }
   .menu-icon {
     margin-right: 2rem;
@@ -128,18 +132,32 @@
         color: #ffa500;
       }
    
-  
+      .menu-icon {
+        margin-right: 0.5rem;
+        margin-left: 0.5rem;
+        font-size: 0.8rem;
+        background-color: transparent;
+      }
     .humburger {
-      display: block; /* Show hamburger icon */
       order: 4;
+      display: grid;
+      place-items: center;
       z-index: 4000;
+     
     }
     .logo {
         order: 1;
+       
       }
       
       .blankSpace{
+        display: flex;
         order: 2;
+       
+      }
+      .icons {
+        order: 3;
+        justify-content: center;
       }
      .top-menu-bar{
       position: fixed;
@@ -149,7 +167,7 @@
 
      .toggles{
       width: 70%;
-      order: 3;
+      
      }
      
   }

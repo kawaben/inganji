@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './TopMenuBar.css';
 
-import { FaBars, FaTimes, FaSearch, FaBell, FaHeart, FaCartArrowDown, FaShoppingCart } from 'react-icons/fa';
+import { FaBars, FaTimes, FaSearch, FaBell, FaHeart, FaShoppingCart } from 'react-icons/fa';
 
 /*import { FaBars, FaTimes, FaSearch, FaBell, FaHeart, FaCartArrowDown } from 'react-icons/fa';
 
@@ -90,23 +90,26 @@ const TopMenuBar = () => {
         </nav>
 
         <div className='blankSpace'></div>
-        {toggles.map((toggle) => (
-          <div key={toggle.id} className={`toggle-item ${toggle.id === 5 ? "humburger" : ""}`} >
-            <button className='icons' onClick={() => handleToggle(toggle.id)}>
-            {openToggle === toggle.id && toggle.id === 5 ? (
-              <FaTimes className="menu-icon" /> // Change to close icon
-            ) : (
-              toggle.title // Show default icon or title
-            )}
-              
-            </button>
-            {openToggle === toggle.id && (
-              <div className="toggles">
-                {toggle.content}
+        <div className='icons'>
+          {toggles.map((toggle) => (
+            <div key={toggle.id} className={`toggle-item ${toggle.id === 5 ? "humburger" : ""}`} >
+              <div className='icon' onClick={() => handleToggle(toggle.id)}>
+              {openToggle === toggle.id && toggle.id === 5 ? (
+                <FaTimes className="menu-icon" /> // Change to close icon
+              ) : (
+                toggle.title // Show default icon or title
+              )}
+                
               </div>
-            )}
-          </div>
-        ))}
+              {openToggle === toggle.id && (
+                <div className="toggles">
+                  {toggle.content}
+                </div>
+              )}
+            </div>
+          ))}
+
+        </div>
 
         
 
