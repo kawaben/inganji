@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
-import { FaBars, FaTimes, FaSearch, FaBell, FaHeart, FaCartArrowDown } from 'react-icons/fa';
 import './TopMenuBar.css';
+/*import { FaBars, FaTimes, FaSearch, FaBell, FaHeart, FaCartArrowDown } from 'react-icons/fa';
 
+  
+
+/*
 const TopMenuBar = () => {
-        /*  humburger toggle */
+        humburger toggle 
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -11,7 +14,7 @@ const TopMenuBar = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-        /*  cart toggle */
+        /*  cart toggle 
 
   const [isCartOpen, setIsCartOpen] = useState(false);
 
@@ -19,7 +22,7 @@ const TopMenuBar = () => {
       setIsCartOpen(!isCartOpen);
     };
 
-     /*  search toggle */
+     /*  search toggle 
 
   const [isSearchOpen, setIsSearchOpen] = useState(false);
 
@@ -27,7 +30,7 @@ const TopMenuBar = () => {
     setIsSearchOpen(!isSearchOpen);
   };
 
-   /*  Notification toggle */
+   /*  Notification toggle 
 
    const [isNotificationOpen, setIsNotificationOpen] = useState(false);
 
@@ -35,7 +38,7 @@ const TopMenuBar = () => {
      setIsNotificationOpen(!isNotificationOpen);
    };
 
-    /*  Favorite toggle */
+    /*  Favorite toggle 
 
   const [isFavoriteOpen, setIsFavoriteOpen] = useState(false);
 
@@ -43,6 +46,67 @@ const TopMenuBar = () => {
     setIsFavoriteOpen(!isFavoriteOpen);
   };
 
+  */
+
+
+  const ToggleList = () => {
+    const [openToggle, setOpenToggle] = useState(null); // Store the ID of the currently open toggle
+  
+    const handleToggle = (id) => {
+      setOpenToggle((prev) => (prev === id ? null : id)); // Close if already open, else open the new toggle
+    };
+
+    const toggles = [
+      { id: 1, title: "Search", content: "Search" },
+      { id: 2, title: "Notification", content: "Notification" },
+      { id: 3, title: "Favorite", content: "Favorite" },
+      { id: 4, title: "Cart", content: "Cart" },
+      { id: 5, title: "Humburger", content: "Humburger" },
+    ];
+
+
+
+
+    return (
+      <div className='top-menu-bar'>
+        <div className="logo">BrandLogo</div>
+
+        <nav className='menu'>
+        <a href="#home">
+           link1
+        </a>
+        <a href="#about">
+           link2
+        </a>
+        <a href="#services">
+           link3
+        </a>
+        <a href="#contact">
+           link4
+        </a>
+        </nav>
+
+        <div className='blankSpace'></div>
+        {toggles.map((toggle) => (
+          <div key={toggle.id} >
+            <button onClick={() => handleToggle(toggle.id)}>
+              {toggle.title}
+            </button>
+            {openToggle === toggle.id && (
+              <div className="toggles">
+                {toggle.content}
+              </div>
+            )}
+          </div>
+        ))}
+
+        
+
+      </div>
+    );
+
+  };
+/*
   return (
     <div className="top-menu-bar">
       <div className="logo">BrandLogo</div>
@@ -91,7 +155,7 @@ const TopMenuBar = () => {
 
     </div>
 
-  );
-};
+  );*/
 
-export default TopMenuBar;
+
+export default ToggleList;

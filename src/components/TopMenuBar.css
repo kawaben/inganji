@@ -67,8 +67,9 @@
     z-index: 4000;
   }
 
-  .cart{
-    display: none;
+  .toggles{
+    flex: 1;
+    display: block;
     position: fixed;
     top: 60px;
      right: 0;
@@ -85,79 +86,10 @@
      align-items: center;
      box-sizing: border-box;
   }
-  .cart.cart-open {
+  .toggles.toggles-open {
     right: 0; /* Slide in */
     display: flex;
   }
-
-  .search{
-    display: none;
-    position: fixed;
-    top: 60px;
-     right: 0;
-     height: 100%;
-     width: 40%;
-     background-color: #333;
-     color: #fff;
-     flex-direction: column;
-     gap: 1rem;
-     padding: 2rem 1rem;
-     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
-     transition: right 0.3s ease; /* Smooth slide-in effect */
-     z-index: 1000;
-     align-items: center;
-     box-sizing: border-box;
-  }
-  .search.search-open {
-    right: 0; /* Slide in */
-    display: flex;
-  }
-
-  .notification{
-    display: none;
-    position: fixed;
-    top: 60px;
-     right: 0;
-     height: 100%;
-     width: 40%;
-     background-color: #333;
-     color: #fff;
-     flex-direction: column;
-     gap: 1rem;
-     padding: 2rem 1rem;
-     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
-     transition: right 0.3s ease; /* Smooth slide-in effect */
-     z-index: 1000;
-     align-items: center;
-     box-sizing: border-box;
-  }
-  .notification.notification-open {
-    right: 0; /* Slide in */
-    display: flex;
-  }
-  .favorite{
-    display: none;
-    position: fixed;
-    top: 60px;
-     right: 0;
-     height: 100%;
-     width: 40%;
-     background-color: #333;
-     color: #fff;
-     flex-direction: column;
-     gap: 1rem;
-     padding: 2rem 1rem;
-     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
-     transition: right 0.3s ease; /* Smooth slide-in effect */
-     z-index: 1000;
-     align-items: center;
-     box-sizing: border-box;
-  }
-  .favorite.favorite-open {
-    right: 0; /* Slide in */
-    display: flex;
-  }
-
 
 
 
@@ -207,9 +139,7 @@
     .logo {
         order: 1;
       }
-      .icons {
-        order: 3;
-      }
+      
       .blankSpace{
         order: 2;
       }
@@ -219,17 +149,10 @@
       z-index: 3000;
      }
 
-     .cart{
+     .toggles{
       width: 70%;
+      order: 3;
      }
-     .search{
-      width: 70%;
-     }
-     .notification{
-      width: 70%;
-     }
-     .favorite{
-      width: 70%;
-     }
+     
   }
   
