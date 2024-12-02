@@ -169,6 +169,13 @@
       width: 100%;
       
      }
-     
+  
+     .nav-links {
+      position: absolute;
+      left: 20px;
+     }
+     .nav-links li{
+      background-color: transparent;
+     }
   }
   

@@ -30,7 +30,7 @@
         }
 
 
-    li{
+    .search li{
             padding: 10px;
             cursor: pointer;
             background-color: transparent;

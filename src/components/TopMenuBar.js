@@ -19,7 +19,16 @@ import { FaBars, FaTimes, FaSearch, FaBell, FaHeart, FaShoppingCart } from 'reac
       { id: 2, title: <FaBell className="menu-icon" />, content: <NotificationPage/> },
       { id: 3, title: <FaHeart className="menu-icon" />, content: <FavoriteItemPage/> },
       { id: 4, title: <FaShoppingCart className="menu-icon" />, content: <CartPage/> },
-      { id: 5, title: <FaBars className="menu-icon" />, content: "Humburger" },
+      { id: 5, title: <FaBars className="menu-icon" />, content: (
+        <nav className='nav-links'>
+          <ul style={{ listStyle: "none", padding: 0 }}>
+            <li><a >link1</a></li>
+            <li><a >link2</a></li>
+            <li><a >link3</a></li>
+            <li><a >link4</a></li>
+          </ul>
+        </nav>
+      )  },
     ];
 
 
