@@ -1,0 +1,43 @@
+    .searchBar{
+            padding: 10px;
+            width: 300px;
+            margin-Bottom: 20px;
+            background-color: rgb(40, 48, 54);
+            border:transparent;
+            outline: "none",
+        }
+  
+    input:focus {
+            outline: none; /* Removes the default focus border */
+            color: aliceblue;
+        }
+
+    h1{
+            font-size: medium;
+            opacity: 0.8;
+        }
+
+    h2{
+            font-size: small;
+            opacity: 0.6;
+        }
+
+
+    ul {
+            font-size: small;
+            list-style: none;
+            padding: 0;
+        }
+
+
+    li{
+            padding: 10px;
+            cursor: pointer;
+        }
+
+    .search{
+            position: absolute;
+            left: 20px;
+            padding: 10px;
+            font-Family: Arial;
+        }

@@ -1,55 +1,7 @@
 import React, { useState } from 'react';
-import './TopMenuBar.css';
-
+import './styles/TopMenuBar.css';
+import SearchPage from './search';
 import { FaBars, FaTimes, FaSearch, FaBell, FaHeart, FaShoppingCart } from 'react-icons/fa';
-
-/*import { FaBars, FaTimes, FaSearch, FaBell, FaHeart, FaCartArrowDown } from 'react-icons/fa';
-
-  
-
-/*
-const TopMenuBar = () => {
-        humburger toggle 
-
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
-        /*  cart toggle 
-
-  const [isCartOpen, setIsCartOpen] = useState(false);
-
-    const toggleCart = () => {
-      setIsCartOpen(!isCartOpen);
-    };
-
-     /*  search toggle 
-
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
-
-  const toggleSearch = () => {
-    setIsSearchOpen(!isSearchOpen);
-  };
-
-   /*  Notification toggle 
-
-   const [isNotificationOpen, setIsNotificationOpen] = useState(false);
-
-   const toggleNotification = () => {
-     setIsNotificationOpen(!isNotificationOpen);
-   };
-
-    /*  Favorite toggle 
-
-  const [isFavoriteOpen, setIsFavoriteOpen] = useState(false);
-
-  const toggleFavorite = () => {
-    setIsFavoriteOpen(!isFavoriteOpen);
-  };
-
-  */
 
 
   const ToggleList = () => {
@@ -60,7 +12,7 @@ const TopMenuBar = () => {
     };
 
     const toggles = [
-      { id: 1, title: <FaSearch className="menu-icon" />, content: "Search" },
+      { id: 1, title: <FaSearch className="menu-icon" />, content: <SearchPage/> },
       { id: 2, title: <FaBell className="menu-icon" />, content: "Notification" },
       { id: 3, title: <FaHeart className="menu-icon" />, content: "Favorite" },
       { id: 4, title: <FaShoppingCart className="menu-icon" />, content: "Cart" },
@@ -117,56 +69,6 @@ const TopMenuBar = () => {
     );
 
   };
-/*
-  return (
-    <div className="top-menu-bar">
-      <div className="logo">BrandLogo</div>
-
-      <div className="hamburger" onClick={toggleMenu}>
-        {isMenuOpen ? <FaTimes /> : <FaBars />}
-      </div>
-
-       <nav className={`menu ${isMenuOpen ? 'menu-open' : ''}`}>
-        <a href="#home">
-           link1
-        </a>
-        <a href="#about">
-           link2
-        </a>
-        <a href="#services">
-           link3
-        </a>
-        <a href="#contact">
-           link4
-        </a>
-      </nav>
-        <div className="blankSpace"></div>
-      <div className="icons">
-      <FaSearch className="menu-icon" onClick={toggleSearch} />
-      <FaBell className="menu-icon" onClick={toggleNotification}/>
-      <FaHeart className="menu-icon"  onClick={toggleFavorite}/>
-      <FaCartArrowDown className="menu-icon" onClick={toggleCart} />
-      </div>
-
-      <div className={`cart ${isCartOpen ? 'cart-open' : ''}`}>
-        cart
-      </div>
-
-      <div className={`notification ${isNotificationOpen ? 'notification-open' : ''}`}>
-        Notification
-      </div>
-
-      <div className={`search ${isSearchOpen ? 'search-open' : ''}`}>
-        search
-      </div>
-
-      <div className={`favorite ${isFavoriteOpen ? 'favorite-open' : ''}`}>
-        Favorite
-      </div>
-
-    </div>
-
-  );*/
 
 
 export default ToggleList;

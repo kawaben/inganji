@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import './styles/Search.css';
 
 const SearchPage = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -22,31 +23,23 @@ const SearchPage = () => {
   );
 
   return (
-    <div style={{ padding: "20px", fontFamily: "Arial" }}>
-      <h1>Search Page</h1>
+    <div className="search">
+        <h1>SEARCH</h1>
       <input
         type="text"
-        placeholder="Search for an item..."
+        placeholder="What Are You Looking For ?"
         value={searchQuery}
         onChange={handleSearch}
-        style={{
-          padding: "10px",
-          width: "300px",
-          marginBottom: "20px",
-          border: "1px solid #ccc",
-          borderRadius: "5px",
-        }}
+       className="searchBar"
       />
-      <ul style={{ listStyle: "none", padding: 0 }}>
+
+        <h2>Suggestion</h2>
+      <ul >
         {filteredItems.length > 0 ? (
           filteredItems.map((item, index) => (
+           
             <li
               key={index}
-              style={{
-                padding: "10px",
-                borderBottom: "1px solid #ddd",
-                cursor: "pointer",
-              }}
             >
               {item}
             </li>
