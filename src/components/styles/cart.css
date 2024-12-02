@@ -1,0 +1,23 @@
+.cart {
+        position: absolute;
+        left: 20px;
+        padding: 20px;
+        font-Family: Arial;
+}
+
+ul { 
+        list-Style: none; 
+        padding: 0;
+ }
+
+li {
+    display: flex;
+    justify-Content: space-between;
+    align-Items: center;
+    padding: 10px;
+    margin-Bottom: 10px;
+    border-Radius: 5px;
+  }
+  h4{
+    background-color: #04121f;
+  }

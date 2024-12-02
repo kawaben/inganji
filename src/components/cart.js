@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import './styles/cart.css';
 
 const CartPage = () => {
   const [cartItems, setCartItems] = useState([
@@ -29,23 +30,15 @@ const CartPage = () => {
   };
 
   return (
-    <div style={{ padding: "20px", fontFamily: "Arial" }}>
+    <div  className="cart">
       <h1>Your Cart</h1>
       {cartItems.length > 0 ? (
         <>
-          <ul style={{ listStyle: "none", padding: 0 }}>
+          <ul >
             {cartItems.map((item) => (
               <li
                 key={item.id}
-                style={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  alignItems: "center",
-                  padding: "10px",
-                  marginBottom: "10px",
-                  border: "1px solid #ccc",
-                  borderRadius: "5px",
-                }}
+                
               >
                 <div>
                   <h3 style={{ margin: 0 }}>{item.name}</h3>
@@ -59,7 +52,7 @@ const CartPage = () => {
                     style={{
                       padding: "5px 10px",
                       margin: "0 5px",
-                      backgroundColor: "#ddd",
+                      backgroundColor: "#04121f",
                       border: "none",
                       borderRadius: "3px",
                       cursor: "pointer",
@@ -73,7 +66,7 @@ const CartPage = () => {
                     style={{
                       padding: "5px 10px",
                       margin: "0 5px",
-                      backgroundColor: "#ddd",
+                      backgroundColor: "#04121f",
                       border: "none",
                       borderRadius: "3px",
                       cursor: "pointer",
