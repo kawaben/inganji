@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import './styles/Notification.css';
 
 const NotificationPage = () => {
   const [notifications, setNotifications] = useState([
@@ -16,21 +17,16 @@ const NotificationPage = () => {
   };
 
   return (
-    <div style={{ padding: "20px", fontFamily: "Arial" }}>
+    <div className="alerts">
       <h1>Notifications</h1>
       <ul style={{ listStyle: "none", padding: 0 }}>
         {notifications.map((notification) => (
           <li
-            key={notification.id}
-            style={{
-              padding: "10px",
-              marginBottom: "10px",
-              border: "1px solid #ccc",
-              borderRadius: "5px",
-              backgroundColor: notification.isRead ? "#f9f9f9" : "#e6f7ff",
-            }}
-          >
-            <div>{notification.message}</div>
+          key={notification.id}
+          className={notification.isRead ? "notification read" : "notification unread"}
+        >
+        
+            <div className="message">{notification.message}</div>
             {!notification.isRead && (
               <button
                 onClick={() => markAsRead(notification.id)}

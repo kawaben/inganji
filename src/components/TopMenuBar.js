@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './styles/TopMenuBar.css';
 import SearchPage from './search';
+import NotificationPage from './Notification';
 import { FaBars, FaTimes, FaSearch, FaBell, FaHeart, FaShoppingCart } from 'react-icons/fa';
 
 
@@ -13,7 +14,7 @@ import { FaBars, FaTimes, FaSearch, FaBell, FaHeart, FaShoppingCart } from 'reac
 
     const toggles = [
       { id: 1, title: <FaSearch className="menu-icon" />, content: <SearchPage/> },
-      { id: 2, title: <FaBell className="menu-icon" />, content: "Notification" },
+      { id: 2, title: <FaBell className="menu-icon" />, content: <NotificationPage/> },
       { id: 3, title: <FaHeart className="menu-icon" />, content: "Favorite" },
       { id: 4, title: <FaShoppingCart className="menu-icon" />, content: "Cart" },
       { id: 5, title: <FaBars className="menu-icon" />, content: "Humburger" },

@@ -1,0 +1,23 @@
+.alerts{
+    position: absolute;
+    left: 20px;
+}
+.notification {
+    transition: background-color 0.3s ease;
+    gap: 10px;
+  }
+  
+  .notification.read {
+    background-color: #2c2626;
+  }
+  
+  .notification.unread {
+    background-color: #424b50;
+  }
+  
+li{
+    
+        padding: 10px;
+        margin-Bottom: 10px;
+       
+}
