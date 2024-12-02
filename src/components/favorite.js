@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import './styles/Favorite.css';
 
 const FavoriteItemPage = () => {
   const [favorites, setFavorites] = useState([
@@ -14,39 +15,23 @@ const FavoriteItemPage = () => {
   };
 
   return (
-    <div style={{ padding: "20px", fontFamily: "Arial" }}>
+    <div className="favorite">
       <h1>Favorite Items</h1>
       {favorites.length > 0 ? (
-        <ul style={{ listStyle: "none", padding: 0 }}>
+        <ul >
           {favorites.map((item) => (
             <li
               key={item.id}
-              style={{
-                padding: "10px",
-                marginBottom: "10px",
-                border: "1px solid #ccc",
-                borderRadius: "5px",
-                display: "flex",
-                justifyContent: "space-between",
-                alignItems: "center",
-              }}
             >
               <div>
-                <h3 style={{ margin: 0 }}>{item.name}</h3>
-                <p style={{ margin: 0, fontSize: "14px", color: "#555" }}>
+                <h3 >{item.name}</h3>
+                <p >
                   {item.description}
                 </p>
               </div>
               <button
                 onClick={() => removeFavorite(item.id)}
-                style={{
-                  padding: "5px 10px",
-                  backgroundColor: "#ff4d4d",
-                  color: "#fff",
-                  border: "none",
-                  borderRadius: "3px",
-                  cursor: "pointer",
-                }}
+                
               >
                 Remove
               </button>
