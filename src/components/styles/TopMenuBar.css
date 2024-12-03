@@ -1,181 +1,179 @@
 .top-menu-bar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 60px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.5rem 2rem;
-    background-color: #333;
-    color: #fff;
-    z-index: 2000;
-    box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 2rem;
+  background-color: #333;
+  color: #fff;
+  z-index: 2000;
+  box-sizing: border-box;
 
-  }
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  flex: 1;
+}
+.menu {
+  flex: 1;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.menu a {
+  margin: 0 1rem;
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s;
+
+}
+
+.menu a:hover {
+  color: #ffa500;
+}
+.blankSpace{
+  flex: 2;
+}
+.icon {
+  background-color:transparent;
+  color: #fff;
+  border: transparent;
+}
+
+.icons{
+  display: flex;
+  align-items: center;
   
-  .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    flex: 1;
-  }
-  .menu {
-    flex: 1;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-  }
-  .menu a {
-    margin: 0 1rem;
-    text-decoration: none;
-    color: #fff;
-    transition: color 0.3s;
+}
+.menu-icon {
+  margin-right: 2rem;
+  font-size: 1.2rem;
+  background-color: transparent;
+}
 
-  }
-  
-  .menu a:hover {
-    color: #ffa500;
-  }
-  .blankSpace{
-    flex: 2;
-  }
-  .icon {
-    background-color:transparent;
-    color: #fff;
-    border: transparent;
-  }
+.menu-icon :hover {
+  color: #ffa500;
+}
 
-  .icons{
-    display: flex;
-    align-items: center;
-  }
-  .menu-icon {
-    margin-right: 2rem;
-    font-size: 1.2rem;
-    background-color: transparent;
-  }
-  .menu-icon:hover {
-    color: #ffa500;
-  }
 
-  
-
-  /* Hamburger Icon */
+/* Hamburger Icon */
 .humburger {
-    display: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    z-index: 4000;
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 4000;
+  margin-left: 2rem;
+}
+
+.toggles{
+  flex: 1;
+  display: flex;
+  position: fixed;
+  top: 60px;
+   right: 0;
+   height: 100%;
+   width: 30%;
+   background-color: #333;
+   color: #fff;
+   flex-direction: column;
+   gap: 1rem;
+   padding: 2rem 1rem;
+   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+   transition: right 0.3s ease; /* Smooth slide-in effect */
+   z-index: 1000;
+   align-items: center;
+   box-sizing: border-box;
+}
+.toggles.toggles-open {
+  right: 0; /* Slide in */
+  display: flex;
+  color: red;
+}
+
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .menu {
+     display: none;
+     position: fixed;
+     top: 60px;
+      right: 0;
+      height: 100%;
+      width: 70%;
+      background-color: #333;
+      color: #fff;
+      flex-direction: column;
+      gap: 1rem;
+      padding: 2rem 1rem;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+      transition: right 0.3s ease; /* Smooth slide-in effect */
+      z-index: 1000;
+      align-items: center;
+      box-sizing: border-box;
+      justify-content:flex-start;
   }
-
-  .toggles{
-    flex: 1;
-    display: flex;
-    position: fixed;
-    top: 60px;
-     right: 0;
-     height: 100%;
-     width: 30%;
-     background-color: #333;
-     color: #fff;
-     flex-direction: column;
-     gap: 1rem;
-     padding: 2rem 1rem;
-     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
-     transition: right 0.3s ease; /* Smooth slide-in effect */
-     z-index: 1000;
-     align-items: center;
-     box-sizing: border-box;
-  }
-  .toggles.toggles-open {
-    right: 0; /* Slide in */
-    display: flex;
-  }
-
-
-
-  /* Responsive Styles */
-  @media (max-width: 768px) {
-    .menu {
-       display: none;
-       position: fixed;
-       top: 60px;
-        right: 0;
-        height: 100%;
-        width: 70%;
-        background-color: #333;
-        color: #fff;
-        flex-direction: column;
-        gap: 1rem;
-        padding: 2rem 1rem;
-        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
-        transition: right 0.3s ease; /* Smooth slide-in effect */
-        z-index: 1000;
-        align-items: center;
-        box-sizing: border-box;
-        justify-content:flex-start;
+  .menu.menu-open {
+      right: 0; /* Slide in */
+      display: flex;
     }
-    .menu.menu-open {
-        right: 0; /* Slide in */
-        display: flex;
-      }
-      
-      .menu a {
-        text-decoration: none;
-        color: #fff;
-        font-size: 1.2rem;
-        transition: color 0.3s;
-      }
-      
-      .menu a:hover {
-        color: #ffa500;
-      }
+    
+    .menu a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 1.2rem;
+      transition: color 0.3s;
+    } 
+    .menu-icon {
+      margin-right: 0.5rem;
+      margin-left: 0.5rem;
+      font-size: 0.8rem;
+      background-color: transparent;
+    }
    
-      .menu-icon {
-        margin-right: 0.5rem;
-        margin-left: 0.5rem;
-        font-size: 0.8rem;
-        background-color: transparent;
-      }
-    .humburger {
-      order: 4;
-      display: grid;
-      place-items: center;
-      z-index: 4000;
+  .humburger {
+    order: 4;
+    display: grid;
+    place-items: center;
+    z-index: 4000;
+   
+  }
+  .logo {
+      order: 1;
      
     }
-    .logo {
-        order: 1;
-       
-      }
-      
-      .blankSpace{
-        display: flex;
-        order: 2;
-       
-      }
-      .icons {
-        order: 3;
-        justify-content: center;
-      }
-     .top-menu-bar{
-      position: fixed;
-      height: 60px;
-      z-index: 3000;
-     }
+    
+    .blankSpace{
+      display: flex;
+      order: 2;
+     
+    }
+    .icons {
+      order: 3;
+      justify-content: center;
+    }
+   .top-menu-bar{
+    position: fixed;
+    height: 60px;
+    z-index: 3000;
+   }
 
-     .toggles{
-      width: 100%;
-      
-     }
-  
-     .nav-links {
-      position: absolute;
-      left: 20px;
-     }
-     .nav-links li{
-      background-color: transparent;
-     }
-  }
-  
+   .toggles{
+    width: 100%;
+    
+   }
+
+   .nav-links {
+    position: absolute;
+    left: 20px;
+   }
+   .nav-links li{
+    background-color: transparent;
+   }
+}
