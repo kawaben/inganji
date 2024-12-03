@@ -92,10 +92,12 @@
 }
 .toggles.toggles-open {
   right: 0; /* Slide in */
-  display: flex;
-  color: red;
 }
 
+.humburger .menu-icon {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
 
 
 /* Responsive Styles */
@@ -176,4 +178,8 @@
    .nav-links li{
     background-color: transparent;
    }
+   .humburger .menu-icon {
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
 }
