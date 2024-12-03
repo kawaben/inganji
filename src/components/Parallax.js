@@ -1,5 +1,5 @@
 import React from "react";
-import "./styles/test.css";
+import "./styles/body.css";
 
 const ParallaxSection = ({ image, title, description }) => {
   return (
