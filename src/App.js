@@ -4,6 +4,7 @@ import './App.css';
 import ToggleList from './components/TopMenuBar';
 import Parallax  from './components/body';
 import ShopCategories from './components/forEveryone';
+import AsSeenOnYou from './components/asSeenOnYou';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <ToggleList/>
       <Parallax/>
       <ShopCategories/>
+      <AsSeenOnYou/>
       
     </div>
   );
