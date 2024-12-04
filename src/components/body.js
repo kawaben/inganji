@@ -1,5 +1,9 @@
 import React from "react";
 import ParallaxSection from "./Parallax";
+import ProductCardsPage from './productCardPage'
+import ShopCategories from './forEveryone';
+
+
 const Parallax = () => {
   const parallaxData = [
     {
@@ -7,21 +11,16 @@ const Parallax = () => {
         title: "Welcome to Section 1",
         description: "This is the first parallax section.",
     },
+   
+  ];
+
+  const parallaxData2 = [
     {
-       
-        title: "Welcome to Section 2",
-        description: "This is the second parallax section.",
+        image: `${process.env.PUBLIC_URL}/images/2.jpg`,
+        title: "Big Group Image",
+        description: "This is For The Group Image.",
     },
-    {
-        image: `${process.env.PUBLIC_URL}/images/17.png`,
-        title: "Welcome to Section 3",
-        description: "This is the third parallax section.",
-    },
-    {
-      image: "https://via.placeholder.com/1920x1080?text=Parallax+4",
-      title: "Welcome to Section 4",
-      description: "This is the fourth parallax section.",
-    },
+   
   ];
 
   return (
@@ -34,10 +33,28 @@ const Parallax = () => {
           description={section.description}
         />
       ))}
+      <section>
+        <ProductCardsPage/>
+      </section>
+
+      <section>
+        <ShopCategories/>
+      </section>
+
       <section className="content-section">
         <h2>Regular Content</h2>
         <p>This is a normal section between the parallax sections.</p>
       </section>
+
+      {parallaxData2.map((section, index) => (
+        <ParallaxSection
+          key={index}
+          image={section.image}
+          title={section.title}
+          description={section.description}
+        />
+      ))}
+
     </div>
   );
 };
