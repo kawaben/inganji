@@ -4,6 +4,7 @@ import './App.css';
 import ToggleList from './components/TopMenuBar';
 import Parallax  from './components/body';
 import AsSeenOnYou from './components/asSeenOnYou';
+import Footer from './components/Footer'
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
       <Parallax/>
       
       <AsSeenOnYou/>
+      <Footer/>
       
     </div>
   );

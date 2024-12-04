@@ -1,0 +1,175 @@
+/* Footer.css */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .footer-section {
+    margin-bottom: 20px;
+  }
+  
+  .footer-section h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .footer-section p, .footer-section ul, .footer-section a {
+    font-size: 14px;
+    color: #ccc;
+  }
+  
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-section ul li {
+    margin-bottom: 8px;
+  }
+  
+  .footer-section ul li a {
+    text-decoration: none;
+    color: #ccc;
+    transition: color 0.3s;
+  }
+  
+  .footer-section ul li a:hover {
+    color: #fff;
+  }
+
+  .social-media{
+    display: grid;
+    grid-template-rows: 1fr;
+    gap: 1rem;
+  }
+  
+  .social-media a {
+    margin-right: 15px;
+    font-size: 20px;
+    color: #ccc;
+    transition: color 0.3s;
+    text-decoration: none;
+  }
+  
+  .social-media a:hover {
+    color: #fff;
+  }
+
+  .icon-text {
+    display: flex;
+    align-items: center; /* Vertically center icon and text */
+    gap: 8px; /* Add spacing between the icon and text */
+   
+  }
+  
+  .icon-text i {
+    font-size: 18px; /* Adjust icon size */
+  }
+  
+  .icon-text p {
+    margin: 0; /* Remove default margin from <p> */
+    font-size: 16px; /* Adjust text size */
+  }
+  
+  .quick-links li{
+    background-color: transparent;
+  }
+  
+  .contact p {
+    text-align: left;
+  }
+
+  .aboutUs p {
+    text-align: left;
+  }
+
+  .footer-bottom {
+    text-align: center;
+    font-size: 14px;
+    border-top: 1px solid #444;
+    padding-top: 20px;
+    margin-top: 20px;
+  }
+  p sup {
+    font-size: 10px; /* Adjust size of the registration mark */
+    vertical-align: text-bottom; /* Align it properly */
+  }
+.footer-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding: 10px 0;
+    border-top: 1px solid #444;
+  }
+
+
+  
+  .language-toggle,
+  .theme-toggle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .language-select {
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    color: #333;
+    cursor: pointer;
+  }
+  
+  .theme-button {
+    padding: 8px 15px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .theme-button:hover {
+    background-color: #555;
+  }
+  
+  /* Theme-specific styles */
+  body.light-theme {
+    background-color: #f9f9f9;
+    color: #333;
+  }
+  
+  body.dark-theme {
+    background-color: #333;
+    color: #f9f9f9;
+  }
+  
+  .footer.dark {
+    background-color: #222;
+    color: #ddd;
+  }
+  
+   /* Responsive Styles */
+@media (max-width: 768px) {
+
+    .social-media{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(20px, 1fr));
+        gap: 1rem;
+      }
+      
+      .icon-text p {
+       display: none;
+      }
+}
