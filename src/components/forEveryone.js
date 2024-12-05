@@ -1,5 +1,6 @@
 import React from 'react';
 import './styles/forEveryone.css';
+import './styles/grobal.css';
 
 const ShopCategories = () => {
   const categories = [

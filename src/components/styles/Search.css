@@ -2,31 +2,34 @@
             padding: 10px;
             width: 300px;
             margin-Bottom: 20px;
-            background-color: rgb(40, 48, 54);
+            background-color: var(--footer-background);
             border:transparent;
             outline: "none",
         }
   
     input:focus {
             outline: none; /* Removes the default focus border */
-            color: aliceblue;
+            color: var(--footer-text);
         }
 
-    h1{
+    .search h1{
             font-size: medium;
             opacity: 0.8;
+            color: var(--text-color);
         }
 
-    h2{
+    .search h2{
             font-size: small;
             opacity: 0.6;
+            color: var(--text-color);
         }
 
 
-    ul {
+    .search ul {
             font-size: small;
             list-style: none;
             padding: 0;
+            
         }
 
 
@@ -34,6 +37,7 @@
             padding: 10px;
             cursor: pointer;
             background-color: transparent;
+            color: var(--text-color);
         }
 
     .search{

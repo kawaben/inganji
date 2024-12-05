@@ -1,7 +1,7 @@
 /* Footer.css */
 .footer {
-    background-color: #333;
-    color: #fff;
+    background-color: var(--footer-background);
+    color:var(--footer-text);
     padding: 40px 20px;
     font-family: Arial, sans-serif;
   }
@@ -11,25 +11,29 @@
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
     margin-bottom: 20px;
+    color: var(--footer-text);
   }
   
   .footer-section {
     margin-bottom: 20px;
+    color: var(--footer-text);
   }
   
   .footer-section h3 {
     font-size: 18px;
     margin-bottom: 10px;
+    color: var(--primary-color);
   }
   
   .footer-section p, .footer-section ul, .footer-section a {
     font-size: 14px;
-    color: #ccc;
+    
   }
   
   .footer-section ul {
     list-style: none;
     padding: 0;
+    
   }
   
   .footer-section ul li {
@@ -38,12 +42,12 @@
   
   .footer-section ul li a {
     text-decoration: none;
-    color: #ccc;
+    color: var(--footer-text);
     transition: color 0.3s;
   }
   
   .footer-section ul li a:hover {
-    color: #fff;
+    color: var(--primary-color);
   }
 
   .social-media{
@@ -55,19 +59,20 @@
   .social-media a {
     margin-right: 15px;
     font-size: 20px;
-    color: #ccc;
+    color: var(--footer-text);
     transition: color 0.3s;
     text-decoration: none;
   }
   
   .social-media a:hover {
-    color: #fff;
+    color: var(--primary-color);
   }
 
   .icon-text {
     display: flex;
     align-items: center; /* Vertically center icon and text */
     gap: 8px; /* Add spacing between the icon and text */
+    
    
   }
   
@@ -78,6 +83,11 @@
   .icon-text p {
     margin: 0; /* Remove default margin from <p> */
     font-size: 16px; /* Adjust text size */
+    color: var(--footer-text);
+  }
+  .icon-text p:hover {
+    color: var(--primary-color);
+    
   }
   
   .quick-links li{
@@ -86,16 +96,21 @@
   
   .contact p {
     text-align: left;
+    color: var(--footer-text);
   }
 
   .aboutUs p {
     text-align: left;
+    color: var(--footer-text);
   }
-
+  .footer-bottom p{
+    color:var(--footer-text);
+  }
   .footer-bottom {
     text-align: center;
     font-size: 14px;
-    border-top: 1px solid #444;
+    border-top: 1px solid var(--footer-text);
+    color: var(--footer-text);;
     padding-top: 20px;
     margin-top: 20px;
   }
@@ -109,7 +124,7 @@
     align-items: center;
     margin-top: 20px;
     padding: 10px 0;
-    border-top: 1px solid #444;
+    border-top: 1px solid var(--footer-text);
   }
 
 
@@ -124,41 +139,22 @@
   .language-select {
     padding: 5px 10px;
     border-radius: 5px;
-    border: 1px solid #ccc;
-    background-color: #fff;
-    color: #333;
+    border: 0.5px solid var(--footer-text);
+    background-color: var(--footer-background);
+    color:var(--footer-text);
     cursor: pointer;
   }
   
-  .theme-button {
+  .theme-button button{
     padding: 8px 15px;
-    background-color: #000;
-    color: #fff;
+    background-color: var(--theme-button);
+    color: #f7f3f3;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
   }
   
-  .theme-button:hover {
-    background-color: #555;
-  }
-  
-  /* Theme-specific styles */
-  body.light-theme {
-    background-color: #f9f9f9;
-    color: #333;
-  }
-  
-  body.dark-theme {
-    background-color: #333;
-    color: #f9f9f9;
-  }
-  
-  .footer.dark {
-    background-color: #222;
-    color: #ddd;
-  }
   
    /* Responsive Styles */
 @media (max-width: 768px) {

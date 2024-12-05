@@ -1,6 +1,8 @@
 import React from 'react';
 import ProductCard from './productCard';
 import './styles/ProductCardPage.css';
+import './styles/grobal.css';
+
 
 const ProductCardsPage = () => {
   const products = [

@@ -17,7 +17,40 @@ li {
     padding: 10px;
     margin-Bottom: 10px;
     border-Radius: 5px;
+    background-color:transparent;
+    color: var(--text-color);
+
   }
-  h4{
-    background-color: #04121f;
+  h3 {
+    margin: 0 ;
+    color: var(--text-color);
+  }
+  .item p {
+    margin: 0;
+    font-Size: 14px;
+    color: var(--text-color);
+    opacity: 0.8;
+  }
+
+  button{
+      padding: 5px 10px;
+      margin: 0 5px;
+      background-color: var(--secondary-color) ;
+      color: var(--text-color);
+      border: none;
+      border-Radius: 3px;
+      cursor: pointer;
+      opacity: 0.8;
+      
+    
+  }
+
+  .remove button{
+    padding: 5px 10px;
+    margin-Left: 10px;
+    background-Color: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    border-Radius: 3px;
+    cursor: pointer;
   }

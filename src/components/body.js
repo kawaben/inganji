@@ -2,7 +2,7 @@ import React from "react";
 import ParallaxSection from "./Parallax";
 import ProductCardsPage from './productCardPage'
 import ShopCategories from './forEveryone';
-
+import './styles/grobal.css';
 
 const Parallax = () => {
   const parallaxData = [

@@ -17,11 +17,12 @@
   .product-name {
     font-size: 16px;
     margin: 10px 0;
-    color: #555;
+    color: var(--text-color);
+    opacity: 0.6;
   }
   
   .product-price {
-    color: #161616;
+    color: var(--text-color);
     font-size: 18px;
     margin: 10px 0;
     font-weight: bold;

@@ -1,5 +1,7 @@
 import React from 'react';
 import './styles/ProductCard.css';
+import './styles/grobal.css';
+
 
 const ProductCard = ({ product }) => {
   return (

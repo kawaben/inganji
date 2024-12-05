@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import './styles/Search.css';
+import './styles/grobal.css';
+
 
 const SearchPage = () => {
   const [searchQuery, setSearchQuery] = useState("");

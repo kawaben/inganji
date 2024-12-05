@@ -9,8 +9,9 @@ const Footer = () => {
 
   // Theme Toggle Handler
   const toggleTheme = () => {
-    setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
-    document.body.className = theme === "light" ? "dark-theme" : "light-theme";
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', newTheme);
+    setTheme(newTheme);
   };
 
   // Language Change Handler
@@ -118,11 +119,11 @@ const Footer = () => {
           </select>
         </div>
 
-        <div className="theme-toggle">
+        <div className="theme-button">
           <label htmlFor="theme">Theme:</label>
-          <button onClick={toggleTheme} className="theme-button">
-            {theme === "light" ? "Dark Mode" : "Light Mode"}
-          </button>
+          <button onClick={toggleTheme}>
+        Switch to {theme === 'light' ? 'Dark' : 'Light'} Theme
+      </button>
         </div>
       </div>
 

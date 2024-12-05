@@ -2,8 +2,8 @@
 .as-seen-on-you-container {
     text-align: center;
     padding: 40px;
-    background-color: #fff;
-    color: #333;
+    background-color: var(--background-color);
+    color: var(--text-color);
   }
   
   h2 {
@@ -39,7 +39,7 @@
     background: none;
     border: none;
     cursor: pointer;
-    color: #333;
+    color: var(--text-color);
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -55,8 +55,8 @@
   
   .add-photo-button {
     padding: 10px 20px;
-    background-color: #000;
-    color: #fff;
+    background-color: var(--primary-color);
+    color: var(--text-color);
     border: none;
     cursor: pointer;
     font-size: 18px;
@@ -64,7 +64,7 @@
   }
   
   .add-photo-button:hover {
-    background-color: #555;
+    opacity: 0.8;
   }
   
 

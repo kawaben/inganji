@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import './styles/cart.css';
+import './styles/grobal.css';
+
 
 const CartPage = () => {
   const [cartItems, setCartItems] = useState([
@@ -40,54 +42,32 @@ const CartPage = () => {
                 key={item.id}
                 
               >
-                <div>
-                  <h3 style={{ margin: 0 }}>{item.name}</h3>
-                  <p style={{ margin: 0, fontSize: "14px", color: "#555" }}>
+                <div className="item">
+                  <h3>{item.name}</h3>
+                  <p>
                     ${item.price.toFixed(2)} each
                   </p>
                 </div>
                 <div style={{ display: "flex", alignItems: "center" }}>
                   <button
                     onClick={() => handleQuantityChange(item.id, -1)}
-                    style={{
-                      padding: "5px 10px",
-                      margin: "0 5px",
-                      backgroundColor: "#04121f",
-                      border: "none",
-                      borderRadius: "3px",
-                      cursor: "pointer",
-                    }}
                   >
                     -
                   </button>
                   <span>{item.quantity}</span>
                   <button
                     onClick={() => handleQuantityChange(item.id, 1)}
-                    style={{
-                      padding: "5px 10px",
-                      margin: "0 5px",
-                      backgroundColor: "#04121f",
-                      border: "none",
-                      borderRadius: "3px",
-                      cursor: "pointer",
-                    }}
                   >
                     +
                   </button>
-                  <button
+                  <div className="remove">
+                  <button 
                     onClick={() => removeItem(item.id)}
-                    style={{
-                      padding: "5px 10px",
-                      marginLeft: "10px",
-                      backgroundColor: "#ff4d4d",
-                      color: "#fff",
-                      border: "none",
-                      borderRadius: "3px",
-                      cursor: "pointer",
-                    }}
                   >
                     Remove
                   </button>
+                  </div>
+                  
                 </div>
               </li>
             ))}

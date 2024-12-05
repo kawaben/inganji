@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './styles/AsSeenOnYou.css';  // We'll add some custom CSS
+import './styles/grobal.css';
 
 const AsSeenOnYou = () => {
   const images = [

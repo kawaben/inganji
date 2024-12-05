@@ -22,8 +22,8 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
-    background-color:rgb(24, 27, 27);
+    background-color: var(--background-color);
+    color: var(--text-color);
   }
   
   .parallax-section .content {
@@ -37,7 +37,8 @@ body, html {
   .content-section {
     padding: 3rem;
     text-align: center;
-    background-color: #413131;
+    background-color: var(--odd-color);
+    color: var(--text-color);
   }
   
   .content-section h2 {

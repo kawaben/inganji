@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import './styles/Notification.css';
+import './styles/grobal.css';
+
 
 const NotificationPage = () => {
   const [notifications, setNotifications] = useState([
@@ -30,17 +32,8 @@ const NotificationPage = () => {
             {!notification.isRead && (
               <button
                 onClick={() => markAsRead(notification.id)}
-                style={{
-                  marginTop: "5px",
-                  padding: "5px 10px",
-                  backgroundColor: "#007bff",
-                  color: "#fff",
-                  border: "none",
-                  borderRadius: "3px",
-                  cursor: "pointer",
-                }}
               >
-                Mark as Read
+                read
               </button>
             )}
           </li>

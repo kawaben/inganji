@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import './styles/Favorite.css';
+import './styles/grobal.css';
 
 const FavoriteItemPage = () => {
   const [favorites, setFavorites] = useState([

@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './styles/TopMenuBar.css';
+import './styles/grobal.css';
 import SearchPage from './search';
 import NotificationPage from './Notification';
 import FavoriteItemPage from './favorite';
