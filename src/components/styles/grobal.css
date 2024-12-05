@@ -1,25 +1,21 @@
 /* colors.css */
 :root {
-    --primary-color: #3498db;
-    --secondary-color: #2ecc71;
-    --background-color: #ffffff;
-    --text-color: #333333;
+    --primary-color: #F4C198;
+    --secondary-color: #e08325;
+    --background-color: #F4E5D7;
+    --text-color: #0c0805;
     --odd-color:#310404;
-    --footer-text:#a79d9d;
-    --footer-background:#413d3d;
-    --theme-button:#270101;
+    --footer-background:#635c56;
   }
   
   /* Dark theme variables */
   [data-theme="dark"] {
-    --primary-color: #e74c3c;
-    --secondary-color: #9b59b6;
-    --background-color: #2c3e50;
-    --text-color: #ecf0f1;
-    --odd-color:#a02b2b;
-    --footer-text:#413d3d;
-    --footer-background:#a79d9d;
-    --theme-button:#06b354;
+    --primary-color: #F4C198;
+    --secondary-color: #F5A454;
+    --background-color: #0c0805;
+    --text-color: #F4E5D7;
+    --footer-text:#635c56;
+    --footer-background:#130b06;
 
 
   }

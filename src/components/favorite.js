@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import './styles/Favorite.css';
 import './styles/grobal.css';
+import { FaTrash} from 'react-icons/fa';
 
 const FavoriteItemPage = () => {
   const [favorites, setFavorites] = useState([
@@ -34,7 +35,7 @@ const FavoriteItemPage = () => {
                 onClick={() => removeFavorite(item.id)}
                 
               >
-                Remove
+                < FaTrash/>
               </button>
             </li>
           ))}

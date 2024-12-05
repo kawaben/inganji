@@ -147,8 +147,8 @@
   
   .theme-button button{
     padding: 8px 15px;
-    background-color: var(--theme-button);
-    color: #f7f3f3;
+    background-color: var(--text-color);
+    color: var( var(--background-color));
     border: none;
     border-radius: 5px;
     cursor: pointer;

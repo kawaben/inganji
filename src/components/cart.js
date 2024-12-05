@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import './styles/cart.css';
 import './styles/grobal.css';
-
+import { FaTrash} from 'react-icons/fa';
 
 const CartPage = () => {
   const [cartItems, setCartItems] = useState([
@@ -60,14 +60,13 @@ const CartPage = () => {
                   >
                     +
                   </button>
-                  <div className="remove">
+                  
                   <button 
                     onClick={() => removeItem(item.id)}
                   >
-                    Remove
+                    <FaTrash/>
+
                   </button>
-                  </div>
-                  
                 </div>
               </li>
             ))}

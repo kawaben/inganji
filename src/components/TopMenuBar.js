@@ -91,7 +91,8 @@ const ToggleList = () => {
               className='icon'
               data-id={toggle.id} // For identifying the icon
               onClick={() => handleToggle(toggle.id)}
-              style={{ color: openToggle === toggle.id ? 'green' : 'inherit' }}
+              style={{ color: openToggle === toggle.id ? 'var(--secondary-color)' : 'inherit' }}
+
             >
               {openToggle === toggle.id && toggle.id === 5 ? (
                 <FaTimes />

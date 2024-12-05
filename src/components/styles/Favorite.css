@@ -24,8 +24,8 @@
 
         .favorite button {
             padding: 5px 10px;
-            background-Color: var(--primary-color);
-            color: var(--text-color);
+            background-Color: var(--secondary-color);
+            color: var(--background-color);
             border: none;
             border-Radius: 3px;
             cursor: pointer;

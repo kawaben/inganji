@@ -37,8 +37,8 @@ body, html {
   .content-section {
     padding: 3rem;
     text-align: center;
-    background-color: var(--odd-color);
-    color: var(--text-color);
+    background-color: var(--secondary-color);
+    color: var(--background-color);
   }
   
   .content-section h2 {

@@ -98,6 +98,12 @@
 
 
 /* Responsive Styles */
+@media (max-width: 1300px) {
+  .toggles{
+    width: 50%;
+    
+   }
+}
 @media (max-width: 768px) {
   .menu {
      display: none;

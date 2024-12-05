@@ -4,7 +4,8 @@
             margin-Bottom: 20px;
             background-color: var(--footer-background);
             border:transparent;
-            outline: "none",
+            outline: "none";
+            color: var(--footer-text);
         }
   
     input:focus {
