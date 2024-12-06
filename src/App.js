@@ -6,6 +6,7 @@ import ToggleList from './components/TopMenuBar';
 import Parallax  from './components/body';
 import AsSeenOnYou from './components/asSeenOnYou';
 import Footer from './components/Footer'
+import HelpButton from './components/help'
 
 
 
@@ -19,6 +20,7 @@ function App() {
       
       <AsSeenOnYou/>
       <Footer/>
+      <HelpButton/>
       
     </div>
   );
