@@ -10,6 +10,8 @@ import HelpButton from './components/help';
 import AppRoutes from './routes/route';
 import FirstParallax from './components/firstPallarax'
 
+import Test from './components/test'
+
 function App() {
   return (
     <Router>
@@ -43,6 +45,7 @@ function MainApp() {
           <AsSeenOnYou />
           <Footer />
           <HelpButton />
+          <Test/>
         </>
       )}
     </div>
