@@ -1,18 +1,50 @@
 // src/data/products.js
-const products = [
-    { name: "Product 1", price: 20, image: "https://via.placeholder.com/100" },
-    { name: "Product 2", price: 25, image: "https://via.placeholder.com/100" },
-    { name: "Product 3", price: 30, image: "https://via.placeholder.com/100" },
-    { name: "Product 4", price: 35, image: "https://via.placeholder.com/100" },
-    { name: "Product 5", price: 40, image: "https://via.placeholder.com/100" },
-    { name: "Product 6", price: 45, image: "https://via.placeholder.com/100" },
-    { name: "Product 7", price: 50, image: "https://via.placeholder.com/100" },
-    { name: "Product 8", price: 55, image: "https://via.placeholder.com/100" },
-    { name: "Product 9", price: 60, image: "https://via.placeholder.com/100" },
-    { name: "Product 10", price: 65, image: "https://via.placeholder.com/100" },
-    { name: "Product 11", price: 70, image: "https://via.placeholder.com/100" },
-    { name: "Product 12", price: 75, image: '/images/1.jpg' },
-  ];
+const productsCategory = {
+  male: [
+    { name: "Product 12", sizes: [30, 32, 34, 36, 38],  lengths: [30, 32], description: 'A classic denim jacket with premium stitching.',  colors: [{ name: 'Black', hex: '#000' }],  category: "male", price: 75, originalPrice: 97, rating: "4.5", image: '/images/m1.jpg' },
+    { name: "Product 12", sizes: [30, 32, 34, 36, 38],  lengths: [30, 32], description: 'A classic denim jacket with premium stitching.',  colors: [{ name: 'Black', hex: '#000' }],  category: "male", price: 75, originalPrice: 97, rating: "4.5", image: '/images/m2.jpg' },
+    { name: "Product 12", sizes: [30, 32, 34, 36, 38],  lengths: [30, 32], description: 'A classic denim jacket with premium stitching.',  colors: [{ name: 'Black', hex: '#000' }],  category: "male", price: 75, originalPrice: 97, rating: "4.5", image: '/images/m3.jpg' },
+    { name: "Product 12", sizes: [30, 32, 34, 36, 38],  lengths: [30, 32], description: 'A classic denim jacket with premium stitching.',  colors: [{ name: 'Black', hex: '#000' }],  category: "male", price: 75, originalPrice: 97, rating: "4.5", image: '/images/m4.jpg' },
+    { name: "Product 12", sizes: [30, 32, 34, 36, 38],  lengths: [30, 32], description: 'A classic denim jacket with premium stitching.',  colors: [{ name: 'Black', hex: '#000' }],  category: "male", price: 75, originalPrice: 97, rating: "4.5", image: '/images/m5.jpg' },
+    { name: "Product 12", sizes: [30, 32, 34, 36, 38],  lengths: [30, 32], description: 'A classic denim jacket with premium stitching.',  colors: [{ name: 'Black', hex: '#000' }],  category: "male", price: 75, originalPrice: 97, rating: "4.5", image: '/images/m6.jpg' },
+    { name: "Product 12", sizes: [30, 32, 34, 36, 38],  lengths: [30, 32], description: 'A classic denim jacket with premium stitching.',  colors: [{ name: 'Black', hex: '#000' }],  category: "male", price: 75, originalPrice: 97, rating: "4.5", image: '/images/m7.jpg' },
+    { name: "Product 12", sizes: [30, 32, 34, 36, 38],  lengths: [30, 32], description: 'A classic denim jacket with premium stitching.',  colors: [{ name: 'Black', hex: '#000' }],  category: "male", price: 75, originalPrice: 97, rating: "4.5", image: '/images/m8.jpg' },
+    { name: "Product 12", sizes: [30, 32, 34, 36, 38],  lengths: [30, 32], description: 'A classic denim jacket with premium stitching.',  colors: [{ name: 'Black', hex: '#000' }],  category: "male", price: 75, originalPrice: 97, rating: "4.5", image: '/images/m9.jpg' },
+  ],
+  female: [
+    { name: "Product 12", sizes: [30, 32, 34, 36, 38],  lengths: [30, 32], description: 'A classic denim jacket with premium stitching.',  colors: [{ name: 'Black', hex: '#000' }],  category: "female", price: 75, originalPrice: 97, rating: "4.5", image: '/images/f1.jpg' },
+    { name: "Product 12", sizes: [30, 32, 34, 36, 38],  lengths: [30, 32], description: 'A classic denim jacket with premium stitching.',  colors: [{ name: 'Black', hex: '#000' }],  category: "female", price: 75, originalPrice: 97, rating: "4.5", image: '/images/f2.jpg' },
+    { name: "Product 12", sizes: [30, 32, 34, 36, 38],  lengths: [30, 32], description: 'A classic denim jacket with premium stitching.',  colors: [{ name: 'Black', hex: '#000' }],  category: "female", price: 75, originalPrice: 97, rating: "4.5", image: '/images/f3.jpg' },
+    { name: "Product 12", sizes: [30, 32, 34, 36, 38],  lengths: [30, 32], description: 'A classic denim jacket with premium stitching.',  colors: [{ name: 'Black', hex: '#000' }],  category: "female", price: 75, originalPrice: 97, rating: "4.5", image: '/images/f4.jpg' },
+    { name: "Product 12", sizes: [30, 32, 34, 36, 38],  lengths: [30, 32], description: 'A classic denim jacket with premium stitching.',  colors: [{ name: 'Black', hex: '#000' }],  category: "female", price: 75, originalPrice: 97, rating: "4.5", image: '/images/f5.jpg' },
+    { name: "Product 12", sizes: [30, 32, 34, 36, 38],  lengths: [30, 32], description: 'A classic denim jacket with premium stitching.',  colors: [{ name: 'Black', hex: '#000' }],  category: "female", price: 75, originalPrice: 97, rating: "4.5", image: '/images/f6.jpg' },
+    { name: "Product 12", sizes: [30, 32, 34, 36, 38],  lengths: [30, 32], description: 'A classic denim jacket with premium stitching.',  colors: [{ name: 'Black', hex: '#000' }],  category: "female", price: 75, originalPrice: 97, rating: "4.5", image: '/images/f7.jpg' },
+    { name: "Product 12", sizes: [30, 32, 34, 36, 38],  lengths: [30, 32], description: 'A classic denim jacket with premium stitching.',  colors: [{ name: 'Black', hex: '#000' }],  category: "female", price: 75, originalPrice: 97, rating: "4.5", image: '/images/f8.jpg' },
+    { name: "Product 12", sizes: [30, 32, 34, 36, 38],  lengths: [30, 32], description: 'A classic denim jacket with premium stitching.',  colors: [{ name: 'Black', hex: '#000' }],  category: "female", price: 75, originalPrice: 97, rating: "4.5", image: '/images/f9.jpg' },
+  ],
+  kids: [
+    { name: "Product 12", sizes: [30, 32, 34, 36, 38],  lengths: [30, 32], description: 'A classic denim jacket with premium stitching.',  colors: [{ name: 'Black', hex: '#000' }],  category: "kids", price: 75, originalPrice: 97, rating: "4.5", image: '/images/k1.jpg' },
+    { name: "Product 12", sizes: [30, 32, 34, 36, 38],  lengths: [30, 32], description: 'A classic denim jacket with premium stitching.',  colors: [{ name: 'Black', hex: '#000' }],  category: "kids", price: 75, originalPrice: 97, rating: "4.5", image: '/images/k2.jpg' },
+    { name: "Product 12", sizes: [30, 32, 34, 36, 38],  lengths: [30, 32], description: 'A classic denim jacket with premium stitching.',  colors: [{ name: 'Black', hex: '#000' }],  category: "kids", price: 75, originalPrice: 97, rating: "4.5", image: '/images/k3.jpg' },
+    { name: "Product 12", sizes: [30, 32, 34, 36, 38],  lengths: [30, 32], description: 'A classic denim jacket with premium stitching.',  colors: [{ name: 'Black', hex: '#000' }],  category: "kids", price: 75, originalPrice: 97, rating: "4.5", image: '/images/k4.jpg' },
+    { name: "Product 12", sizes: [30, 32, 34, 36, 38],  lengths: [30, 32], description: 'A classic denim jacket with premium stitching.',  colors: [{ name: 'Black', hex: '#000' }],  category: "kids", price: 75, originalPrice: 97, rating: "4.5", image: '/images/k5.jpg' },
+    { name: "Product 12", sizes: [30, 32, 34, 36, 38],  lengths: [30, 32], description: 'A classic denim jacket with premium stitching.',  colors: [{ name: 'Black', hex: '#000' }],  category: "kids", price: 75, originalPrice: 97, rating: "4.5", image: '/images/k6.jpg' },
+    { name: "Product 12", sizes: [30, 32, 34, 36, 38],  lengths: [30, 32], description: 'A classic denim jacket with premium stitching.',  colors: [{ name: 'Black', hex: '#000' }],  category: "kids", price: 75, originalPrice: 97, rating: "4.5", image: '/images/k7.jpg' },
+    { name: "Product 12", sizes: [30, 32, 34, 36, 38],  lengths: [30, 32], description: 'A classic denim jacket with premium stitching.',  colors: [{ name: 'Black', hex: '#000' }],  category: "kids", price: 75, originalPrice: 97, rating: "4.5", image: '/images/k8.jpg' },
+    { name: "Product 12", sizes: [30, 32, 34, 36, 38],  lengths: [30, 32], description: 'A classic denim jacket with premium stitching.',  colors: [{ name: 'Black', hex: '#000' }],  category: "kids", price: 75, originalPrice: 97, rating: "4.5", image: '/images/k9.jpg' },
+  ],
+  accesories:[
+    { name: "Product 12", sizes: [30, 32, 34, 36, 38],  lengths: [30, 32], description: 'A classic denim jacket with premium stitching.',  colors: [{ name: 'Black', hex: '#000' }],  category: "accesories", price: 75, originalPrice: 97, rating: "4.5", image: '/images/a1.jpg' },
+    { name: "Product 12", sizes: [30, 32, 34, 36, 38],  lengths: [30, 32], description: 'A classic denim jacket with premium stitching.',  colors: [{ name: 'Black', hex: '#000' }],  category: "accesories", price: 75, originalPrice: 97, rating: "4.5", image: '/images/a2.jpg' },
+    { name: "Product 12", sizes: [30, 32, 34, 36, 38],  lengths: [30, 32], description: 'A classic denim jacket with premium stitching.',  colors: [{ name: 'Black', hex: '#000' }],  category: "accesories", price: 75, originalPrice: 97, rating: "4.5", image: '/images/a3.jpg' },
+    { name: "Product 12", sizes: [30, 32, 34, 36, 38],  lengths: [30, 32], description: 'A classic denim jacket with premium stitching.',  colors: [{ name: 'Black', hex: '#000' }],  category: "accesories", price: 75, originalPrice: 97, rating: "4.5", image: '/images/a4.jpg' },
+    { name: "Product 12", sizes: [30, 32, 34, 36, 38],  lengths: [30, 32], description: 'A classic denim jacket with premium stitching.',  colors: [{ name: 'Black', hex: '#000' }],  category: "accesories", price: 75, originalPrice: 97, rating: "4.5", image: '/images/a5.jpg' },
+    { name: "Product 12", sizes: [30, 32, 34, 36, 38],  lengths: [30, 32], description: 'A classic denim jacket with premium stitching.',  colors: [{ name: 'Black', hex: '#000' }],  category: "accesories", price: 75, originalPrice: 97, rating: "4.5", image: '/images/a6.jpg' },
+    { name: "Product 12", sizes: [30, 32, 34, 36, 38],  lengths: [30, 32], description: 'A classic denim jacket with premium stitching.',  colors: [{ name: 'Black', hex: '#000' }],  category: "accesories", price: 75, originalPrice: 97, rating: "4.5", image: '/images/a7.jpg' },
+    { name: "Product 12", sizes: [30, 32, 34, 36, 38],  lengths: [30, 32], description: 'A classic denim jacket with premium stitching.',  colors: [{ name: 'Black', hex: '#000' }],  category: "accesories", price: 75, originalPrice: 97, rating: "4.5", image: '/images/a8.jpg' },
+    { name: "Product 12", sizes: [30, 32, 34, 36, 38],  lengths: [30, 32], description: 'A classic denim jacket with premium stitching.',  colors: [{ name: 'Black', hex: '#000' }],  category: "accesories", price: 75, originalPrice: 97, rating: "4.5", image: '/images/a9.jpg' },
+  ],
+  };
   
-  export default products;
+  export default productsCategory;
   

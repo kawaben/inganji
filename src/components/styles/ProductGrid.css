@@ -1,14 +1,16 @@
 .category{
-    display: grid;
+    display: flex;
     grid-template-columns: 1fr 4fr;
     gap: 20px;
-    border: 1px solid red;
     padding: 1rem;
 }
 
 .product-grid {
     display: grid;
     grid-template-columns: 1fr;  
+    margin-left: 260px; /* Offset by sidebar width to avoid overlap */
+    width: calc(100% - 260px); /* Adjust width to account for sidebar */
+    padding: 20px;
   }
 
   .product-grid-images{
@@ -21,7 +23,7 @@
 
   .Pagination-Control{
     margin-Top: 20px;
-    text-Align: center; 
+    text-Align: center;
   }
    
   .pagination-button{
@@ -45,12 +47,14 @@
 
 
   .filter-sidebar {
-   flex: 1;
-   
-   height: 500px;
-   overflow-y:scroll;
+    flex: 1;
+    position: fixed;
+    top: 0; /* Stick to the top */
+    left: 0; /* Stick to the left */
+    height: 100vh; /* Full viewport height */
+    width: 250px;
+    overflow-y:scroll;
     padding: 1rem;
-    border: 1px solid #0387e0;
   }
   .filter-sidebar h1 {
     font-size: 1.5rem;
@@ -93,9 +97,21 @@
         display: grid;
         grid-template-columns: 1fr;
         gap: 20px;
-        border: 1px solid red;
         padding: 1rem;
     }
     
+    .filter-sidebar {
+      position: relative;
+      width: 100%;
+      height: auto;
+      padding: 0;
+     }
 
+     .product-grid {
+      display: grid;
+      grid-template-columns: 1fr;  
+      margin: 0; /* Offset by sidebar width to avoid overlap */
+      width: 100%; /* Adjust width to account for sidebar */
+      padding: 0;
+    }
   }
