@@ -6,6 +6,7 @@ import NotificationPage from './Notification';
 import FavoriteItemPage from './favorite';
 import CartPage from './cart';
 import { FaBars, FaTimes, FaSearch, FaBell, FaHeart, FaShoppingCart } from 'react-icons/fa';
+import { Link } from "react-router-dom";
 
 const ToggleList = () => {
   const [openToggle, setOpenToggle] = useState(null);
@@ -64,8 +65,8 @@ const ToggleList = () => {
           <ul style={{ listStyle: 'none', padding: 0 }}>
             <li><a>link1</a></li>
             <li><a>link2</a></li>
-            <li><a>link3</a></li>
-            <li><a>link4</a></li>
+            <li><a>okay</a></li>
+            <li><Link to="/ProductGrid">category</Link></li>
           </ul>
         </nav>
       ),
@@ -77,10 +78,10 @@ const ToggleList = () => {
       <div className="logo">BrandLogo</div>
 
       <nav className='menu'>
-        <a>link1</a>
-        <a>link2</a>
-        <a>link3</a>
-        <a>link4</a>
+       <a>link1</a>
+            <a>link2</a>
+            <a>okay</a>
+            <a><Link to="/ProductGrid">category</Link></a>
       </nav>
 
       <div className='blankSpace'></div>
