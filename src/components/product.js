@@ -1,6 +1,7 @@
 // src/data/products.js
 const productsCategory = {
   male: [
+    { name: "Product 1", image: "/images/m1.jpg", hoverImage: "/images/f11.jpg", images: {"#ffa500": "/images/f1.jpg","#008000": "/images/f10.jpg","#0000ff": "/images/f7.jpg","#aaa": "/images/f11.jpg"},price: 25.99,originalPrice: 30.99,rating: 4.5,},
     { name: "Product 12", sizes: [30, 32, 34, 36, 38],  lengths: [30, 32], description: 'A classic denim jacket with premium stitching.',  colors: [{ name: 'Black', hex: '#000' }],  category: "male", price: 75, originalPrice: 97, rating: "4.5", image: '/images/m1.jpg', hoverImage:'/images/f11.jpg',},
     { name: "Product 12", sizes: [30, 32, 34, 36, 38],  lengths: [30, 32], description: 'A classic denim jacket with premium stitching.',  colors: [{ name: 'Black', hex: '#000' }],  category: "male", price: 75, originalPrice: 97, rating: "4.5", image: '/images/m2.jpg', hoverImage:'/images/f11.jpg', },
     { name: "Product 12", sizes: [30, 32, 34, 36, 38],  lengths: [30, 32], description: 'A classic denim jacket with premium stitching.',  colors: [{ name: 'Black', hex: '#000' }],  category: "male", price: 75, originalPrice: 97, rating: "4.5", image: '/images/m3.jpg', hoverImage:'/images/f11.jpg', },

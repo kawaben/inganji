@@ -14,6 +14,7 @@ import FirstParallax from './components/firstPallarax'
 
 
 
+
 function App() {
   return (
     <Router>

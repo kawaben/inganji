@@ -5,41 +5,60 @@ import Footer from './Footer'
 import "./styles/ProductGrid.css";
 import "./styles/ProductCard.css";
 
-const ProductCard = ({ product }) => {
+function ProductCard({ product }) {
+  // State for managing the current image
+  const [currentImage, setCurrentImage] = useState(product.image);
+
+  // State to detect hover
   const [isHovered, setIsHovered] = useState(false);
+
+  // Handler for color change
+  const handleColorChange = (color) => {
+    setCurrentImage(product.images[color]); // Change the image based on the selected color
+  };
+
+  // Effect to handle hover dynamically
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+    setCurrentImage(product.hoverImage || product.image); // Switch to hover image
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+    setCurrentImage(product.image); // Switch back to the default image
+  };
 
   return (
     <div className="productcard">
+      {/* Image container with hover logic */}
       <div
         className="prod-image-container"
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
       >
         <img
-          src={isHovered ? product.hoverImage : product.image}
+          src={currentImage} // Use currentImage state here
           alt={product.name}
-          
+          className="prod-image"
         />
         <button className="prod-hover-button">View Details</button>
       </div>
+
+      {/* Color selection circles */}
       <div className="prod-color-selector">
-        <div
-          className="prod-color-circle"
-          style={{ backgroundColor: "#ffa500" }}
-        ></div>
-        <div
-          className="prod-color-circle"
-          style={{ backgroundColor: "#008000" }}
-        ></div>
-        <div
-          className="prod-color-circle"
-          style={{ backgroundColor: "#0000ff" }}
-        ></div>
-        <div
-          className="prod-color-circle"
-          style={{ backgroundColor: "#aaa" }}
-        ></div>
+        {product.images
+          ? Object.keys(product.images).map((color) => (
+              <div
+                key={color}
+                className="prod-color-circle"
+                style={{ backgroundColor: color }}
+                onClick={() => handleColorChange(color)}
+              ></div>
+            ))
+          : null}
       </div>
+
+      {/* Product details */}
       <h4 className="prod-name">{product.name}</h4>
       <div className="prod-rating">⭐ {product.rating}</div>
       <p className="prod-price">
@@ -52,9 +71,7 @@ const ProductCard = ({ product }) => {
       </p>
     </div>
   );
-};
-
-
+}
 
 
 
@@ -100,6 +117,7 @@ function ProductGrid({ itemsPerPage = 6 }) {
               ))}
             </div>
           </div>
+
           <div className="grid-container">   
             <div className="product-grid">
               <div className="product-grid-images">
