@@ -5,30 +5,59 @@ import Footer from './Footer'
 import "./styles/ProductGrid.css";
 import "./styles/ProductCard.css";
 
-function ProductCard({ product }) {
+const ProductCard = ({ product }) => {
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
     <div className="productcard">
-      <img src={product.image} alt={product.name} />
+      <div
+        className="prod-image-container"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
+        <img
+          src={isHovered ? product.hoverImage : product.image}
+          alt={product.name}
+          
+        />
+        <button className="prod-hover-button">View Details</button>
+      </div>
       <div className="prod-color-selector">
-        {product.colors.map((color, index) => (
-          <div
-            key={index}
-            className="prod-color-circle"
-            style={{ backgroundColor: color.hex }}
-          ></div>
-        ))}
+        <div
+          className="prod-color-circle"
+          style={{ backgroundColor: "#ffa500" }}
+        ></div>
+        <div
+          className="prod-color-circle"
+          style={{ backgroundColor: "#008000" }}
+        ></div>
+        <div
+          className="prod-color-circle"
+          style={{ backgroundColor: "#0000ff" }}
+        ></div>
+        <div
+          className="prod-color-circle"
+          style={{ backgroundColor: "#aaa" }}
+        ></div>
       </div>
       <h4 className="prod-name">{product.name}</h4>
       <div className="prod-rating">⭐ {product.rating}</div>
       <p className="prod-price">
-        ${product.price}
+        ${Array.isArray(product.price) ? product.price.join(" - $") : product.price}
         <span className="original-price">
-          ${product.originalPrice}
+          {Array.isArray(product.originalPrice)
+            ? `$${product.originalPrice.join(" - $")}`
+            : `$${product.originalPrice}`}
         </span>
       </p>
     </div>
   );
-}
+};
+
+
+
+
+
 
 function ProductGrid({ itemsPerPage = 6 }) {
   const { category } = useParams();
