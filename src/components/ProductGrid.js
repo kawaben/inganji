@@ -9,23 +9,35 @@ function ProductCard({ product }) {
   // State for managing the current image
   const [currentImage, setCurrentImage] = useState(product.image);
 
+  // State for the selected color
+  const [selectedColor, setSelectedColor] = useState(null);
+
   // State to detect hover
   const [isHovered, setIsHovered] = useState(false);
 
   // Handler for color change
   const handleColorChange = (color) => {
-    setCurrentImage(product.images[color]); // Change the image based on the selected color
+    setSelectedColor(color); // Set the selected color
+    setCurrentImage(product.images[color]); // Update image to the selected color's default image
   };
 
   // Effect to handle hover dynamically
   const handleMouseEnter = () => {
     setIsHovered(true);
-    setCurrentImage(product.hoverImage || product.image); // Switch to hover image
+    if (selectedColor && product.hoverImages[selectedColor]) {
+      setCurrentImage(product.hoverImages[selectedColor]); // Use the hover image for the selected color
+    } else {
+      setCurrentImage(product.hoverImage || product.image); // Fallback to default hover image
+    }
   };
 
   const handleMouseLeave = () => {
     setIsHovered(false);
-    setCurrentImage(product.image); // Switch back to the default image
+    if (selectedColor) {
+      setCurrentImage(product.images[selectedColor]); // Reset to the selected color's image
+    } else {
+      setCurrentImage(product.image); // Reset to default image
+    }
   };
 
   return (
@@ -72,6 +84,8 @@ function ProductCard({ product }) {
     </div>
   );
 }
+
+
 
 
 
