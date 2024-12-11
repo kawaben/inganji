@@ -55,45 +55,49 @@ function ProductGrid({ itemsPerPage = 6 }) {
   }
 
   return (
-    <div className="category">
-      <div className="filter-sidebar">
-        <h1>Available Today</h1>
-        <p>
-          <span role="img" aria-label="location">📍</span> Items may be available for pickup.{" "}
-          <a href="#">Find Nearby Store</a>
-        </p>
-        <h2>Filters</h2>
-        <h3>Size</h3>
-        <div className="size-options">
-          {["S", "M", "L", "XL", "XXL"].map((size) => (
-            <div className="size-option" key={size}>{size}</div>
-          ))}
-        </div>
-      </div>
+    
+        <div className="category">
+          <div className="filter-sidebar">
+            <h1>Available Today</h1>
+            <p>
+              <span role="img" aria-label="location">📍</span> Items may be available for pickup.{" "}
+              <a href="#">Find Nearby Store</a>
+            </p>
+            <h2>Filters</h2>
+            <h3>Size</h3>
+            <div className="size-options">
+              {["S", "M", "L", "XL", "XXL"].map((size) => (
+                <div className="size-option" key={size}>{size}</div>
+              ))}
+            </div>
+          </div>
+          <div className="grid-container">   
+            <div className="product-grid">
+              <div className="product-grid-images">
+                {currentProducts.map((product, index) => (
+                  <ProductCard key={index} product={product} />
+                ))}
+              </div>
 
-      <div className="product-grid">
-        <div className="product-grid-images">
-          {currentProducts.map((product, index) => (
-            <ProductCard key={index} product={product} />
-          ))}
-        </div>
+              {/* Pagination Controls */}
+              <div className="Pagination-Control">
+                {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+                  <button
+                    key={page}
+                    onClick={() => handlePageChange(page)}
+                    className={`pagination-button ${currentPage === page ? "active" : ""}`}
+                  >
+                    {page}
+                  </button>
+                ))}
+              </div>
+            </div>
 
-        {/* Pagination Controls */}
-        <div className="Pagination-Control">
-          {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
-            <button
-              key={page}
-              onClick={() => handlePageChange(page)}
-              className={`pagination-button ${currentPage === page ? "active" : ""}`}
-            >
-              {page}
-            </button>
-          ))}
+            <Footer/>
+          </div>
         </div>
-      </div>
-      
-    </div>
-
+        
+    
     
   );
 

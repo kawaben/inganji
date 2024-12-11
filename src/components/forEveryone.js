@@ -6,22 +6,22 @@ import './styles/grobal.css';
 const categories = [
   {
       title: 'Shop / Men',
-    image: `${process.env.PUBLIC_URL}/images/4.jpg`,
+    image: `${process.env.PUBLIC_URL}/images/m1.jpg`,
     category: "male",
   },
   {
     title: 'Shop / Accessories',
-    image: `${process.env.PUBLIC_URL}/images/5.jpg`,
+    image: `${process.env.PUBLIC_URL}/images/a1.jpg`,
     category: "accesories",
   },
   {
     title: 'Shop / Women',
-    image: `${process.env.PUBLIC_URL}/images/6.jpg`,
+    image: `${process.env.PUBLIC_URL}/images/f1.jpg`,
     category: "female",
   },
   {
     title: 'Shop / Kids',
-    image: `${process.env.PUBLIC_URL}/images/7.jpg`,
+    image: `${process.env.PUBLIC_URL}/images/k1.jpg`,
     category: "kids",
   },
 ];
