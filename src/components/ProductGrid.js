@@ -10,10 +10,12 @@ import "./styles/ProductCard.css";
 
 
 // ProductCard component
-function ProductCard({ product }) {
+function ProductCard({ product, addToCart }) {
   const [currentImage, setCurrentImage] = useState(product.image);
   const [selectedColor, setSelectedColor] = useState(null);
   const [isHovered, setIsHovered] = useState(false);
+  const [isAddedToBag, setIsAddedToBag] = useState(false);
+  const [isFavorite, setIsFavorite] = useState(false);
 
   const handleColorChange = (color) => {
     setSelectedColor(color);
@@ -38,6 +40,16 @@ function ProductCard({ product }) {
     }
   };
 
+  const handleAddToBag = () => {
+    addToCart(product);
+    setIsAddedToBag(true);
+    setTimeout(() => setIsAddedToBag(false), 3000); // Reset after 3 seconds
+  };
+
+  const toggleFavorite = () => {
+    setIsFavorite((prev) => !prev);
+  };
+
   return (
     <div className="productcard">
       <div
@@ -50,7 +62,26 @@ function ProductCard({ product }) {
           alt={product.name}
           className="prod-image"
         />
-        <button className="prod-hover-button">Add To Bag</button>
+        <button
+          className={`prod-hover-button ${isAddedToBag ? "added" : ""}`}
+          onClick={handleAddToBag}
+          disabled={isAddedToBag}
+        >
+          {isAddedToBag ? "Added To Bag" : "Add To Bag"}
+        </button>
+       
+        <button
+            className={`favorite-icon ${isFavorite ? "favorite" : ""}`}
+            onClick={toggleFavorite}
+            aria-label="Toggle Favorite"
+          >
+            ❤
+          </button>
+       
+       
+
+
+
       </div>
 
       <div className="prod-color-selector">
@@ -65,6 +96,8 @@ function ProductCard({ product }) {
           ))}
       </div>
 
+      {isAddedToBag && <div className="cart-pop-up-message">Item Is added to bag!</div>}
+
       <h4 className="prod-name">{product.name}</h4>
       <div className="prod-rating">⭐ {product.rating}</div>
       <p className="prod-price">
@@ -75,9 +108,17 @@ function ProductCard({ product }) {
             : `$${product.originalPrice}`}
         </span>
       </p>
+
+      
     </div>
   );
 }
+
+
+
+
+
+
 
 // ProductGrid component
 function ProductGrid({ itemsPerPage = 6, relatedItems = [] }) {
@@ -85,9 +126,15 @@ function ProductGrid({ itemsPerPage = 6, relatedItems = [] }) {
   const navigate = useNavigate();
   const products = productsCategory[category] || [];
   const [currentPage, setCurrentPage] = useState(1);
+  const [cart, setCart] = useState([]);
   const totalPages = Math.ceil(products.length / itemsPerPage);
 
   const handlePageChange = (pageNumber) => setCurrentPage(pageNumber);
+
+  const addToCart = (product) => {
+    setCart((prevCart) => [...prevCart, product]);
+    console.log("Cart updated:", cart);
+  };
 
   const startIndex = (currentPage - 1) * itemsPerPage;
   const currentProducts = products.slice(startIndex, startIndex + itemsPerPage);
@@ -103,6 +150,7 @@ function ProductGrid({ itemsPerPage = 6, relatedItems = [] }) {
 
   return (
     <>
+
       <ToggleList/>
       <div className="category">
         <div className="filter-sidebar">
@@ -124,7 +172,7 @@ function ProductGrid({ itemsPerPage = 6, relatedItems = [] }) {
           <div className="product-grid">
             <div className="product-grid-images">
               {currentProducts.map((product, index) => (
-                <ProductCard key={index} product={product} />
+                <ProductCard key={index} product={product} addToCart={addToCart} />
               ))}
             </div>
 
@@ -140,12 +188,18 @@ function ProductGrid({ itemsPerPage = 6, relatedItems = [] }) {
               ))}
             </div>
           </div>
+
+          
         </div>
       </div>
       <Footer />
     </>
   );
 }
+
+
+
+
 
 
 

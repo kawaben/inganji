@@ -6,9 +6,42 @@ import NotificationPage from './Notification';
 import FavoriteItemPage from './favorite';
 import CartPage from './cart';
 import { FaBars, FaTimes, FaSearch, FaBell, FaHeart, FaShoppingCart } from 'react-icons/fa';
-import { Link } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
+
+
+
+const categories = [
+  {
+    category: "male",
+    name:'MEN',
+  },
+  {
+    category: "accesories",
+    name:'ACCESORIES',
+  },
+  {
+    category: "female",
+    name:'WOMEN',
+  },
+  {
+    category: "kids",
+    name:'KIDS',
+  },
+];
+
+
+
+
+
 
 const ToggleList = () => {
+
+  const navigate = useNavigate();
+    const handleCardClick = (category) => {
+    navigate(`/Category/${category}`);
+    };
+
+
   const [openToggle, setOpenToggle] = useState(null);
   const [isSmallScreen, setIsSmallScreen] = useState(false);
   const toggleRef = useRef(null); // Reference for toggles container
@@ -53,6 +86,9 @@ const ToggleList = () => {
   }, [openToggle, isSmallScreen]);
 
   const toggles = [
+
+    
+    
     { id: 1, title: <FaSearch className='menu-icon' />, content: <SearchPage /> },
     { id: 2, title: <FaBell className='menu-icon' />, content: <NotificationPage /> },
     { id: 3, title: <FaHeart className='menu-icon' />, content: <FavoriteItemPage /> },
@@ -61,13 +97,27 @@ const ToggleList = () => {
       id: 5,
       title: <FaBars />,
       content: (
+
+        // ==============  phones Menu bar ===================
         <nav className='nav-links'>
-          <ul style={{ listStyle: 'none', padding: 0 }}>
-            <li><a>link1</a></li>
-            <li><a>link2</a></li>
-            <li><a>okay</a></li>
-            <li><Link to="/ProductGrid">category</Link></li>
-          </ul>
+          {categories.map((category, index) => (
+
+            <ul style={{ listStyle: 'none', padding: 0 }}>
+            <li><a key={category.category}
+                onClick={() => handleCardClick(category.category)}
+                tabIndex="0" // Make the div focusable
+                role="button" // Indicate this element is interactive
+                aria-label={`View details for ${category.category}`}
+              >{category.name}</a></li>
+
+
+            
+            </ul>
+
+
+          ))}
+
+         
         </nav>
       ),
     },
@@ -76,12 +126,23 @@ const ToggleList = () => {
   return (
     <div className='top-menu-bar'>
       <div className="logo">BrandLogo</div>
-
+      {/*             ====== big screen navigation menu*/}
+      
       <nav className='menu'>
-       <a>link1</a>
-            <a>link2</a>
-            <a>okay</a>
-            <a><Link to="/ProductGrid">category</Link></a>
+
+          {categories.map((category, index) => (
+
+          
+          <a key={category.category}
+              onClick={() => handleCardClick(category.category)}
+              tabIndex="0" // Make the div focusable
+              role="button" // Indicate this element is interactive
+              aria-label={`View details for ${category.category}`}
+            >{category.name}</a>
+
+
+                ))}
+
       </nav>
 
       <div className='blankSpace'></div>

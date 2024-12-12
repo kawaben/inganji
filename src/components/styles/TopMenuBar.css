@@ -37,7 +37,7 @@
 }
 
 .menu a:hover {
-  color: var(--primary-color);
+  color: var(--secondary-color);
 }
 .blankSpace{
   flex: 2;
@@ -56,7 +56,7 @@
 }
 
 .menu-icon :hover {
-  color: var(--primary-color);
+  color: var(--secondary-color);
 }
 
 
@@ -179,6 +179,10 @@
    }
    .nav-links li{
     background-color: transparent;
+   }
+
+   .nav-links li:hover{
+    color: var(--secondary-color);
    }
    .humburger .menu-icon {
     font-size: 1.5rem;

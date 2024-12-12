@@ -90,7 +90,10 @@
     cursor: pointer;
   }
   
-  
+  .cart-pop-up-message{
+    color: var(--secondary-color);
+   
+  }
   @media (max-width: 768px) {
    
     .category{

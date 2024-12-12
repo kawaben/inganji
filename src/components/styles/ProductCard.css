@@ -14,6 +14,8 @@
 
 .prod-image-container {
   position: relative;
+  width: 100%; /* Ensure proper sizing */
+  height: auto;
   overflow: hidden;
 }
 
@@ -35,6 +37,43 @@
   opacity: 0;
   z-index: 10;
 }
+/* ProductCard.css */
+.favorite-icon {
+  width: 30px; /* Fixed width */
+  height: 30px; /* Fixed height */
+  border: none;
+  background: none;
+  color: #999; /* Default color */
+  font-size: 24px;
+  cursor: pointer;
+  position: absolute;
+  top: 10%;
+  left: 85%;
+  transform: translate(-15%, -90%);
+  display: flex;
+  align-items: center; /* Center content */
+  justify-content: center;
+}
+
+.favorite {
+  width: 30px; /* Fixed width */
+  height: 30px; /* Fixed height */
+  border: none;
+  background: none;
+  color: #fc0909; /* Default color */
+  font-size: 24px;
+  cursor: pointer;
+  position: absolute;
+  top: 10%;
+  left: 85%;
+  transform: translate(-15%, -90%);
+  display: flex;
+  align-items: center; /* Center content */
+  justify-content: center;;
+}
+
+
+
 
 .prod-image-container:hover .prod-hover-button {
   display: block;

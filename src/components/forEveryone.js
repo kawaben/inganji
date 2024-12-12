@@ -30,11 +30,12 @@ const categories = [
 function ShopCategories  ()  {
   
   const navigate = useNavigate();
-
   const handleCardClick = (category) => {
     navigate(`/Category/${category}`);
   };
 
+
+  
   return (
     <div className="shop-container">
             <h2>SOMETHING FOR EVERYONE</h2>
