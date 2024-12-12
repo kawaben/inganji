@@ -1,76 +1,70 @@
-import React, { useState } from "react";
+// Import necessary dependencies
+import React, { useEffect,useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import productsCategory from "./product"; // Import the product data
-import Footer from './Footer'
+import Footer from "./Footer";
+import ToggleList from './TopMenuBar';
 import "./styles/ProductGrid.css";
 import "./styles/ProductCard.css";
 
+
+
+// ProductCard component
 function ProductCard({ product }) {
-  // State for managing the current image
   const [currentImage, setCurrentImage] = useState(product.image);
-
-  // State for the selected color
   const [selectedColor, setSelectedColor] = useState(null);
-
-  // State to detect hover
   const [isHovered, setIsHovered] = useState(false);
 
-  // Handler for color change
   const handleColorChange = (color) => {
-    setSelectedColor(color); // Set the selected color
-    setCurrentImage(product.images[color]); // Update image to the selected color's default image
+    setSelectedColor(color);
+    setCurrentImage(product.images[color]);
   };
 
-  // Effect to handle hover dynamically
   const handleMouseEnter = () => {
     setIsHovered(true);
     if (selectedColor && product.hoverImages[selectedColor]) {
-      setCurrentImage(product.hoverImages[selectedColor]); // Use the hover image for the selected color
+      setCurrentImage(product.hoverImages[selectedColor]);
     } else {
-      setCurrentImage(product.hoverImage || product.image); // Fallback to default hover image
+      setCurrentImage(product.hoverImage || product.image);
     }
   };
 
   const handleMouseLeave = () => {
     setIsHovered(false);
     if (selectedColor) {
-      setCurrentImage(product.images[selectedColor]); // Reset to the selected color's image
+      setCurrentImage(product.images[selectedColor]);
     } else {
-      setCurrentImage(product.image); // Reset to default image
+      setCurrentImage(product.image);
     }
   };
 
   return (
     <div className="productcard">
-      {/* Image container with hover logic */}
       <div
         className="prod-image-container"
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
         <img
-          src={currentImage} // Use currentImage state here
+          src={currentImage}
           alt={product.name}
           className="prod-image"
         />
-        <button className="prod-hover-button">View Details</button>
+        <button className="prod-hover-button">Add To Bag</button>
       </div>
 
-      {/* Color selection circles */}
       <div className="prod-color-selector">
-        {product.images
-          ? Object.keys(product.images).map((color) => (
-              <div
-                key={color}
-                className="prod-color-circle"
-                style={{ backgroundColor: color }}
-                onClick={() => handleColorChange(color)}
-              ></div>
-            ))
-          : null}
+        {product.images &&
+          Object.keys(product.images).map((color) => (
+            <div
+              key={color}
+              className="prod-color-circle"
+              style={{ backgroundColor: color }}
+              onClick={() => handleColorChange(color)}
+            ></div>
+          ))}
       </div>
 
-      {/* Product details */}
       <h4 className="prod-name">{product.name}</h4>
       <div className="prod-rating">⭐ {product.rating}</div>
       <p className="prod-price">
@@ -85,18 +79,11 @@ function ProductCard({ product }) {
   );
 }
 
-
-
-
-
-
-function ProductGrid({ itemsPerPage = 6 }) {
+// ProductGrid component
+function ProductGrid({ itemsPerPage = 6, relatedItems = [] }) {
   const { category } = useParams();
   const navigate = useNavigate();
-
-  // Use imported productsCategory
   const products = productsCategory[category] || [];
-
   const [currentPage, setCurrentPage] = useState(1);
   const totalPages = Math.ceil(products.length / itemsPerPage);
 
@@ -115,56 +102,51 @@ function ProductGrid({ itemsPerPage = 6 }) {
   }
 
   return (
-    
-        <div className="category">
-          <div className="filter-sidebar">
-            <h1>Available Today</h1>
-            <p>
-              <span role="img" aria-label="location">📍</span> Items may be available for pickup.{" "}
-              <a href="#">Find Nearby Store</a>
-            </p>
-            <h2>Filters</h2>
-            <h3>Size</h3>
-            <div className="size-options">
-              {["S", "M", "L", "XL", "XXL"].map((size) => (
-                <div className="size-option" key={size}>{size}</div>
+    <>
+      <ToggleList/>
+      <div className="category">
+        <div className="filter-sidebar">
+          <h1>Available Today</h1>
+          <p>
+            <span role="img" aria-label="location">📍</span> Items may be available for pickup. {" "}
+            <a href="#">Find Nearby Store</a>
+          </p>
+          <h2>Filters</h2>
+          <h3>Size</h3>
+          <div className="size-options">
+            {["S", "M", "L", "XL", "XXL"].map((size) => (
+              <div className="size-option" key={size}>{size}</div>
+            ))}
+          </div>
+        </div>
+
+        <div className="grid-container">
+          <div className="product-grid">
+            <div className="product-grid-images">
+              {currentProducts.map((product, index) => (
+                <ProductCard key={index} product={product} />
+              ))}
+            </div>
+
+            <div className="Pagination-Control">
+              {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+                <button
+                  key={page}
+                  onClick={() => handlePageChange(page)}
+                  className={`pagination-button ${currentPage === page ? "active" : ""}`}
+                >
+                  {page}
+                </button>
               ))}
             </div>
           </div>
-
-          <div className="grid-container">   
-            <div className="product-grid">
-              <div className="product-grid-images">
-                {currentProducts.map((product, index) => (
-                  <ProductCard key={index} product={product} />
-                ))}
-              </div>
-
-              {/* Pagination Controls */}
-              <div className="Pagination-Control">
-                {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
-                  <button
-                    key={page}
-                    onClick={() => handlePageChange(page)}
-                    className={`pagination-button ${currentPage === page ? "active" : ""}`}
-                  >
-                    {page}
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            <Footer/>
-          </div>
         </div>
-        
-    
-    
+      </div>
+      <Footer />
+    </>
   );
-
-  
 }
 
 
 
-export default ProductGrid;
+export { ProductCard, ProductGrid };

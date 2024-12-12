@@ -1,6 +1,7 @@
 .category{
     display: flex;
     grid-template-columns: 1fr 4fr;
+    margin-top: 60px;
 }
 
 .grid-container{
@@ -48,10 +49,8 @@
 
   .filter-sidebar {
     flex: 1;
-    position: fixed;
-    top: 0; /* Stick to the top */
-    left: 0; /* Stick to the left */
-    height: 100vh; /* Full viewport height */
+    position: absolute;
+    height: auto; /* Full viewport height */
     width: 250px;
     overflow-y:auto;
   }
