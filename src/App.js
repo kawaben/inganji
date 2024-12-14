@@ -11,6 +11,9 @@ import AppRoutes from './routes/route';
 import FirstParallax from './components/firstPallarax'
 
 
+import ProductList from './components/ProductList'
+
+
 
 
 
@@ -48,7 +51,7 @@ function MainApp() {
           <AsSeenOnYou />
           <Footer />
           <HelpButton />
-          
+          <ProductList/>
         </>
       )}
     </div>
