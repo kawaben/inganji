@@ -11,7 +11,7 @@ import AppRoutes from "./routes/route";
 import FirstParallax from "./components/firstPallarax";
 import AdminPage from "./components/AdminPage";
 
-import { LanguageProvider } from "./context/LanguageContext";
+import { LanguageProvider, useLanguage } from "./components/context/LanguageContext";
 
 function App() {
   return (
