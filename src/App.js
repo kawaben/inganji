@@ -1,62 +1,59 @@
-import React from 'react';
-import { BrowserRouter as Router, useLocation } from 'react-router-dom';
-import './components/styles/grobal.css';
-import './App.css';
-import ToggleList from './components/TopMenuBar';
-import Parallax from './components/body';
-import AsSeenOnYou from './components/asSeenOnYou';
-import Footer from './components/Footer';
-import HelpButton from './components/help';
-import AppRoutes from './routes/route';
-import FirstParallax from './components/firstPallarax'
+import React from "react";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import "./components/styles/grobal.css";
+import "./App.css";
+import ToggleList from "./components/TopMenuBar";
+import Parallax from "./components/body";
+import AsSeenOnYou from "./components/asSeenOnYou";
+import Footer from "./components/Footer";
+import HelpButton from "./components/help";
+import AppRoutes from "./routes/route";
+import FirstParallax from "./components/firstPallarax";
+import AdminPage from "./components/AdminPage";
 
-
-import ProductList from './components/ProductList'
-
-import ImageUpload from './components/ImageUpload';
-import ProductImages from './components/Display';
-
-
-
-
-
+import { LanguageProvider } from "./context/LanguageContext";
 
 function App() {
   return (
+    <LanguageProvider>
     <Router>
-      <MainApp />
+      <Routes>
+        {/* Route for Admin Page */}
+        <Route path="/admin" element={<AdminPage />} />
+        {/* Main Application */}
+        <Route path="*" element={<MainApp />} />
+      </Routes>
     </Router>
+    </LanguageProvider>
   );
 }
 
 function MainApp() {
-  const location = useLocation(); // Hook to get the current location
+  const location = useLocation();
 
-  // Check if the current route is the homepage or other static routes
-  const isHomePage = location.pathname === '/';
+  // Check if the current route is the homepage
+  const isHomePage = location.pathname === "/";
 
   return (
     <div>
-      {/* Render static components only on the homepage */}
+      {/* Render components specific to the homepage */}
       {isHomePage && (
         <>
           <ToggleList />
-          <FirstParallax/>
-          
-         
+          <FirstParallax />
         </>
       )}
-      {/* Render dynamic routes */}
+      {/* Dynamic routes */}
       <AppRoutes />
+      {/* Render additional components for the homepage */}
       {isHomePage && (
         <>
-        <Parallax />
+          <Parallax />
           <AsSeenOnYou />
           <Footer />
           <HelpButton />
-          <ProductList/>
-          <ImageUpload/>
-          <ProductImages/>
+          
+          
         </>
       )}
     </div>
