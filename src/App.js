@@ -10,6 +10,7 @@ import HelpButton from "./components/help";
 import AppRoutes from "./routes/route";
 import FirstParallax from "./components/firstPallarax";
 import AdminPage from "./components/AdminPage";
+import Controls from "./components/controls";
 
 import { LanguageProvider, useLanguage } from "./components/context/LanguageContext";
 
@@ -39,6 +40,7 @@ function MainApp() {
       {/* Render components specific to the homepage */}
       {isHomePage && (
         <>
+          <Controls/>
           <ToggleList />
           <FirstParallax />
         </>

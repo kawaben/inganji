@@ -116,30 +116,7 @@ const Footer = () => {
       </div>
 
       {/* Language and Theme Toggle Section */}
-      <div className="footer-controls">
-        <div className="language-toggle">
-          <label htmlFor="language">Language:</label>
-          <select
-            id="language"
-            value={language}
-            onChange={(e) => toggleLanguage(e.target.value)}
-            className="language-select"
-          >
-            {Object.entries(languages).map(([code, label]) => (
-              <option key={code} value={code}>
-                {label}
-              </option>
-            ))}
-          </select>
-        </div>
-
-        <div className="theme-button">
-          <label htmlFor="theme">Theme:</label>
-          <button onClick={toggleTheme}>
-            Switch to {theme === "light" ? "Dark" : "Light"} Theme
-          </button>
-        </div>
-      </div>
+     
 
       <div className="footer-bottom">
         <p>
