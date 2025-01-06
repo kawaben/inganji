@@ -26,7 +26,7 @@ const AsSeenOnYou = () => {
   return (
     <div className="as-seen-on-you-container">
       <h2>As Seen On You</h2>
-      <p>Show us how you #LiveInLevis</p>
+      <p>Show us how you #LiveTheThrone</p>
       <div className="image-slider">
         <button onClick={prevImage} className="prev-button">
           &lt;

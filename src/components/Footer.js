@@ -54,37 +54,37 @@ const Footer = () => {
             <a href="https://facebook.com" target="_blank" rel="noreferrer">
             <div className="icon-text">
               <i className="fab fa-facebook-f"></i>
-              <p>Inganji Official</p>
+              <p>nuovi re</p>
             </div>
             </a>
             <a href="https://twitter.com" target="_blank" rel="noreferrer">
             <div className="icon-text">
               <i className="fab fa-twitter"></i>
-              <p>Inganji Official</p>
+              <p>nuovi re</p>
               </div>
             </a>
             <a href="https://instagram.com" target="_blank" rel="noreferrer">
             <div className="icon-text">
               <i className="fab fa-instagram"></i>
-              <p>Inganji Official</p>
+              <p>nuovi re</p>
               </div>
             </a>
             <a href="https://linkedin.com" target="_blank" rel="noreferrer">
             <div className="icon-text">
               <i className="fab fa-linkedin-in"></i>
-              <p>Inganji Official</p>
+              <p>nuovi re</p>
               </div>
             </a>
             <a href="https://tiktok.com" target="_blank" rel="noreferrer">
             <div className="icon-text">
               <i className="fab fa-tiktok"></i>
-              <p>Inganji Official</p>
+              <p>nuovi re</p>
               </div>
             </a>
             <a href="https://pinterest.com" target="_blank" rel="noreferrer">
                 <div className="icon-text">
               <i className="fab fa-pinterest"></i>
-              <p>Inganji Official</p>
+              <p>nuovi re</p>
               </div>
             </a>
           </div>
@@ -95,9 +95,9 @@ const Footer = () => {
             
           <h3>Contact Us</h3>
           <div className="contact">
-            <p>Email: support@clothingbrand.com</p>
-            <p>Phone: +1 123 456 7890</p>
-            <p>Address: 123 Fashion Ave, New York, NY 10001</p>
+            <p>Email: nuovire@gmail.com</p>
+            <p>Phone: +250 795458850</p>
+            <p>Address: kigali,RWANDA</p>
             </div>
                  </div>
       </div>
@@ -128,7 +128,7 @@ const Footer = () => {
       </div>
 
       <div className="footer-bottom">
-        <p>&copy; {new Date().getFullYear()} INGANJI<sup>®</sup>. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} NUOVI RE<sup>®</sup>. All rights reserved.</p>
       </div>
     </footer>
   );
