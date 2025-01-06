@@ -4,9 +4,9 @@ import './styles/grobal.css';
 const FirstParallax = () => {
   const parallaxData = [
     {
-        image: `${process.env.PUBLIC_URL}/images/15.jpg`,
-        title: "Welcome to Section 1",
-        description: "This is the first parallax section.",
+        image: `${process.env.PUBLIC_URL}/images/3d-mocup.png`,
+        title: "Welcome to NUOVI RE",
+        description: "EXTRA 50% OFF SALE",
     },
    
   ];

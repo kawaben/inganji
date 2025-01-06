@@ -6,7 +6,7 @@ import NotificationPage from './Notification';
 import FavoriteItemPage from './favorite';
 import CartPage from './cart';
 import { FaBars, FaTimes, FaSearch, FaBell, FaHeart, FaShoppingCart } from 'react-icons/fa';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate,Link } from 'react-router-dom';
 
 
 
@@ -86,9 +86,6 @@ const ToggleList = () => {
   }, [openToggle, isSmallScreen]);
 
   const toggles = [
-
-    
-    
     { id: 1, title: <FaSearch className='menu-icon' />, content: <SearchPage /> },
     { id: 2, title: <FaBell className='menu-icon' />, content: <NotificationPage /> },
     { id: 3, title: <FaHeart className='menu-icon' />, content: <FavoriteItemPage /> },
@@ -125,7 +122,16 @@ const ToggleList = () => {
 
   return (
     <div className='top-menu-bar'>
-      <div className="logo">BrandLogo</div>
+      <div className="logo">
+      <Link to="/">
+        <img
+          src={`${process.env.PUBLIC_URL}/images/logo.svg`}
+          alt="Logo"
+        />
+      </Link>
+</div>
+
+
       {/*             ====== big screen navigation menu*/}
       
       <nav className='menu'>

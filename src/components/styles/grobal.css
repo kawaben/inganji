@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+
+
+
 /* colors.css */
 :root {
     --primary-color: #F4C198;
@@ -34,6 +39,10 @@
     background-color: var(--background-color);
     color: var(--text-color);
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: "Bebas Neue", serif;
+    font-weight: 400;
+    font-style: normal;
   }
-  
+  * {
+    box-sizing: inherit; /* Ensure all elements respect box-sizing */
+  }
