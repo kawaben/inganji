@@ -13,6 +13,9 @@ import FirstParallax from './components/firstPallarax'
 
 import ProductList from './components/ProductList'
 
+import ImageUpload from './components/ImageUpload';
+import ProductImages from './components/Display';
+
 
 
 
@@ -52,6 +55,8 @@ function MainApp() {
           <Footer />
           <HelpButton />
           <ProductList/>
+          <ImageUpload/>
+          <ProductImages/>
         </>
       )}
     </div>
