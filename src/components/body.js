@@ -2,16 +2,33 @@ import React from "react";
 import ParallaxSection from "./Parallax";
 import ShopCategories from './forEveryone';
 import './styles/grobal.css';
+import { useLanguage } from './context/LanguageContext';
+
 const Parallax = () => {
- 
-  const parallaxData2 = [
-    {
+  const { language } = useLanguage();
+  const parallaxData2 = {
+    en:[{
         image: `${process.env.PUBLIC_URL}/images/2.jpg`,
-        title: "Big Group Image",
-        description: "This is For The Group Image.",
-    },
+        title: "NEW ARRIVAL",
+        description: "COMING SOON.",
+        },],
+    fr:[{
+      image: `${process.env.PUBLIC_URL}/images/2.jpg`,
+      title: "NOUVEAUTÉ",
+      description: "À VENIR.",
+        },],
+    sw:[{
+      image: `${process.env.PUBLIC_URL}/images/2.jpg`,
+      title: "UJIO MPYA",
+      description: "INAKUJA HIVI KARIBUNI.",
+        },],
+    kn:[{
+      image: `${process.env.PUBLIC_URL}/images/2.jpg`,
+      title: "IBICURUZWA BISHYA",
+      description: "BIRAZA VUBA .",
+        },],
    
-  ];
+  };
 
   return (
     <div>
@@ -27,7 +44,7 @@ const Parallax = () => {
         <p>This is a normal section between the parallax sections.</p>
       </section>
 
-      {parallaxData2.map((section, index) => (
+      {parallaxData2[language].map((section, index) => (
         <ParallaxSection
           key={index}
           image={section.image}

@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import './styles/ProductCardPage.css';
 import './styles/grobal.css';
 import './styles/ProductDetails.css';
+import { useLanguage } from './context/LanguageContext';
 
 const products = [
   {
@@ -38,7 +39,13 @@ const products = [
 ];
 
  function ProductCardsPage  ()  {
-  
+  const { language } = useLanguage();
+  const title = {
+    en: "Shop Our Collection",
+    kn: "Gura Icyegeranyo Cyacu",
+    fr: "Magasinez notre collection",
+    sw: "Nunua Mkusanyiko Wetu"
+  };
 
   const navigate = useNavigate();
 
@@ -49,7 +56,7 @@ const products = [
 
   return (
     <div className="product-cards-page">
-      <h1 className="page-title">Shop Our Collection</h1>
+      <h1 className="page-title">{title[language]}</h1>
       <div className="products-grid">
         {products.map((product) => (
           <div

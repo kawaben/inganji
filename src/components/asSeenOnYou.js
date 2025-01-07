@@ -1,8 +1,30 @@
 import React, { useState } from 'react';
 import './styles/AsSeenOnYou.css';  // We'll add some custom CSS
 import './styles/grobal.css';
+import { useLanguage } from './context/LanguageContext';
 
 const AsSeenOnYou = () => {
+
+  const { language } = useLanguage();
+  const title = {
+    en: "As Seen On You",
+    kn: "Uko Ugaragara",
+    fr: "Comme on le voit sur vous",
+    sw: "Kama Inavyoonekana Juu Yako"
+  };
+  const tag = {
+    en: "Show us how you",
+    kn: "Twereke Uko",
+    fr: "Montre-nous comment tu",
+    sw: "Tuonyeshe jinsi wewe"
+  };
+  const button = {
+    en: "Add Your Photo",
+    kn: "Shiraho Ifoto Yawe",
+    fr: "Ajoutez Votre Photo",
+    sw: "Ongeza Picha Yako"
+  };
+
   const images = [
     { id: 1, imgSrc: `${process.env.PUBLIC_URL}/images/5.jpg`, handle: '@Triplehorn' },
     { id: 2, imgSrc: `${process.env.PUBLIC_URL}/images/12.jpg`, handle: '@Maham.Qureshi_' },
@@ -25,8 +47,8 @@ const AsSeenOnYou = () => {
 
   return (
     <div className="as-seen-on-you-container">
-      <h2>As Seen On You</h2>
-      <p>Show us how you #LiveTheThrone</p>
+      <h2>{title[language]}</h2>
+      <p>{tag[language]} #LiveTheThrone</p>
       <div className="image-slider">
         <button onClick={prevImage} className="prev-button">
           &lt;
@@ -43,7 +65,7 @@ const AsSeenOnYou = () => {
           &gt;
         </button>
       </div>
-      <button className="add-photo-button">Add Your Photo</button>
+      <button className="add-photo-button">{button[language]}</button>
     </div>
   );
 };
