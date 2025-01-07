@@ -128,7 +128,9 @@ const ToggleList = () => {
           </a>
         ))}
       </nav>
+
       <div className="blankSpace" />
+      
       <div className="icons" ref={toggleRef}>
         {toggles.map((toggle) => (
           <div key={toggle.id} className={`toggle-item ${toggle.id === 5 ? 'humburger' : ''}`}>

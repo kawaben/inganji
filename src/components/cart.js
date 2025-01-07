@@ -3,7 +3,19 @@ import './styles/cart.css';
 import './styles/grobal.css';
 import { FaTrash} from 'react-icons/fa';
 
+import { useLanguage } from "./context/LanguageContext";
+
 const CartPage = () => {
+  const { language} = useLanguage(); // Using Language Context
+
+  const text = {
+    en: { title: "Your Cart", total:"Total", each:"each", empty:"Your cart is empty!", },
+    fr: { title: "Votre Panier", total:"Total", each:"chaque", empty:"Votre panier est vide !",},
+    sw: { title: "Mkokoteni Wako", total:"Jumla", each:"kila mmoja", empty:"Rukwama yako haina kitu!", },
+    kn: { title: "Igare ryawe", total:"Igiteranyo", each:"buri kimwe", empty:"Igare ryawe ririmo ubusa!", }
+  
+  };
+
   const [cartItems, setCartItems] = useState([
     { id: 1, name: "Apple", price: 1.5, quantity: 2 },
     { id: 2, name: "Banana", price: 1.0, quantity: 3 },
@@ -33,7 +45,7 @@ const CartPage = () => {
 
   return (
     <div  className="cart">
-      <h1>Your Cart</h1>
+      <h1>{text[language]?.title}</h1>
       {cartItems.length > 0 ? (
         <>
           <ul >
@@ -45,7 +57,7 @@ const CartPage = () => {
                 <div className="item">
                   <h3>{item.name}</h3>
                   <p>
-                    ${item.price.toFixed(2)} each
+                    ${item.price.toFixed(2)} {text[language]?.each}
                   </p>
                 </div>
                 <div style={{ display: "flex", alignItems: "center" }}>
@@ -71,10 +83,10 @@ const CartPage = () => {
               </li>
             ))}
           </ul>
-          <h3>Total: ${calculateTotal()}</h3>
+          <h3>{text[language]?.total}: ${calculateTotal()}</h3>
         </>
       ) : (
-        <p>Your cart is empty!</p>
+        <p>{text[language]?.empty}</p>
       )}
     </div>
   );

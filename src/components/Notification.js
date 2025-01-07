@@ -2,8 +2,20 @@ import React, { useState } from "react";
 import './styles/Notification.css';
 import './styles/grobal.css';
 
+import { useLanguage } from "./context/LanguageContext";
+
 
 const NotificationPage = () => {
+  const { language} = useLanguage(); // Using Language Context
+
+  const text = {
+    en: { title: "Notifications", button: "read", },
+    fr: { title: "Notifications", button: "lire",},
+    sw: { title: "Arifa", button: "soma", },
+    kn: { title: "Kumenyesha", button: "soma", }
+  
+  };
+
   const [notifications, setNotifications] = useState([
     { id: 1, message: "You have a new message", isRead: false },
     { id: 2, message: "Your order has been shipped", isRead: false },
@@ -20,7 +32,7 @@ const NotificationPage = () => {
 
   return (
     <div className="alerts">
-      <h1>Notifications</h1>
+      <h1>{text[language]?.title}</h1>
       <ul style={{ listStyle: "none", padding: 0 }}>
         {notifications.map((notification) => (
           <li
@@ -33,7 +45,7 @@ const NotificationPage = () => {
               <button
                 onClick={() => markAsRead(notification.id)}
               >
-                read
+                {text[language]?.button}
               </button>
             )}
           </li>

@@ -1,9 +1,23 @@
 import React, { useState } from "react";
 import './styles/Favorite.css';
 import './styles/grobal.css';
+import './styles/cart.css';
 import { FaTrash} from 'react-icons/fa';
 
+import { useLanguage } from "./context/LanguageContext";
+
 const FavoriteItemPage = () => {
+  const { language} = useLanguage(); // Using Language Context
+
+  const text = {
+    en: { title: "Favorite Items", noFavorite:"No favorite items yet!" },
+    fr: { title: "Articles Favoris", noFavorite:"Aucun article favori pour l'instant !"},
+    sw: { title: "Vipengee Vipendwa", noFavorite:"Bado hakuna vipengee unavyovipenda!" },
+    kn: { title: "Ibintu Ukunda", noFavorite:"Nta bintu ukunda kugeza ubu!" }
+  
+  };
+
+
   const [favorites, setFavorites] = useState([
     { id: 1, name: "Apple", description: "A sweet red fruit" },
     { id: 2, name: "Banana", description: "A tropical yellow fruit" },
@@ -17,8 +31,8 @@ const FavoriteItemPage = () => {
   };
 
   return (
-    <div className="favorite">
-      <h1>Favorite Items</h1>
+    <div className="cart">
+      <h1>{text[language]?.title}</h1>
       {favorites.length > 0 ? (
         <ul >
           {favorites.map((item) => (
@@ -41,7 +55,7 @@ const FavoriteItemPage = () => {
           ))}
         </ul>
       ) : (
-        <p>No favorite items yet!</p>
+        <p>{text[language]?.noFavorite}</p>
       )}
     </div>
   );

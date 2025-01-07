@@ -1,48 +1,48 @@
-    .favorite{ 
-            position: absolute;
-            left: 20px;
-            padding: 20px;
-            font-Family: Arial;
-        }
+.favorite {
+    position: absolute;
+    left: 20px;
+    padding: 20px;
+    font-family: Arial; /* Correct capitalization */
+   background-color: rebeccapurple;
+}
 
-    ul{
+ul {
+    list-style: none; /* Correct capitalization */
+    padding: 0;
+}
 
-            list-Style: none; 
-            padding: 0 
-        }
+li {
+    padding: 10px;
+    width: 300px;
+    margin-bottom: 10px; /* Correct capitalization */
+    background-color: transparent;
+    border-radius: 5px; /* Correct capitalization */
+    display: flex;
+    justify-content: space-between; /* Correct capitalization */
+    align-items: center; /* Correct capitalization */
+}
 
-    li{
-            padding: 10px;
-            width: 300px;
-            margin-Bottom: 10px;
-            background-color: transparent;
-            border-Radius: 5px;
-            display: flex;
-            justify-Content:space-between;
-            align-Items: center;
-        }
+.favorite button {
+    padding: 5px 10px;
+    background-color: var(--secondary-color); /* Correct capitalization */
+    color: var(--background-color);
+    border: none;
+    border-radius: 3px; /* Correct capitalization */
+    cursor: pointer;
+}
 
-        .favorite button {
-            padding: 5px 10px;
-            background-Color: var(--secondary-color);
-            color: var(--background-color);
-            border: none;
-            border-Radius: 3px;
-            cursor: pointer;
-        }
+.favorite p {
+    margin: 0;
+    font-size: 14px; /* Correct capitalization */
+    color: var(--text-color);
+    opacity: 0.8;
+}
 
-   .favorite p { 
-            margin: 0;
-            font-Size: 14px;
-            color: var(--text-color);
-            opacity: 0.8;
-        }    
+.favorite h3 {
+    margin: 0;
+    color: var(--text-color);
+}
 
-    .favorite h3 { 
-        margin: 0 ;
-        color: var(--text-color);
-        }
-
-    .favorite h1 { 
-        color: var(--text-color);
-        }
+.favorite h1 {
+    color: var(--text-color);
+}
