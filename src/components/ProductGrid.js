@@ -3,14 +3,63 @@ import React, { useEffect,useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import productsCategory from "./product"; // Import the product data
 import Footer from "./Footer";
+import Controls from "./controls";
 import ToggleList from './TopMenuBar';
 import "./styles/ProductGrid.css";
 import "./styles/ProductCard.css";
 
+import { useLanguage } from "./context/LanguageContext";
 
+
+const text = {
+  en: { 
+    available: "Available Today", 
+    pickUp:"Items may be available for pickup.", 
+    pickUpLink:"Find Nearby Store", 
+    filter:"Filters", 
+    size:"Size", 
+    button:"Add To Bag",
+    button2:"Added To Bag",  
+    itemadded:"Item Is added to bag!",  
+  },
+
+  fr: { 
+    available: "Disponible aujourd'hui", 
+    pickUp:"Les articles peuvent être disponibles pour le ramassage.", 
+    pickUpLink:"Trouver un magasin à proximité", 
+    filter:"Filtres", size:"Taille", 
+    button:"Ajouter au panier", 
+    button2:"Ajouté au panier",
+    itemadded:"L'article est ajouté au panier!",
+  },
+  sw: { 
+    available: "Inapatikana Leo", 
+    pickUp:"Bidhaa zinaweza kupatikana kwa kuchukuliwa.", 
+    pickUpLink:"Pata Duka la Karibu", 
+    filter:"Vichujio", 
+    size:"Ukubwa", 
+    button:"Ongeza kwenye Mfuko", 
+    button2:"Imeongezwa kwa Mfuko",
+    itemadded:"Bidhaa imeongezwa kwenye begi!",
+  },
+  kn: { 
+    available: "Ibiboneka Uyu munsi", 
+    pickUp:"Ibintu birashobora kuboneka kubi twara.", 
+    pickUpLink:"Shakisha Iduka rikwegereye", 
+    filter:"Muyunguruzi", 
+    size:"Ingano", 
+    button:"Ongera Kumufuka", 
+    button2:"Yongewe Kumufuka",
+    itemadded:"Igicuruzwa cyongewe kumufuka!",
+  }
+
+};
 
 // ProductCard component
 function ProductCard({ product, addToCart }) {
+
+  const { language} = useLanguage(); // Using Language Context
+
   const [currentImage, setCurrentImage] = useState(product.image);
   const [selectedColor, setSelectedColor] = useState(null);
   const [isHovered, setIsHovered] = useState(false);
@@ -67,7 +116,7 @@ function ProductCard({ product, addToCart }) {
           onClick={handleAddToBag}
           disabled={isAddedToBag}
         >
-          {isAddedToBag ? "Added To Bag" : "Add To Bag"}
+          {isAddedToBag ? text[language]?.button2 : text[language]?.button},
         </button>
        
         <button
@@ -96,7 +145,7 @@ function ProductCard({ product, addToCart }) {
           ))}
       </div>
 
-      {isAddedToBag && <div className="cart-pop-up-message">Item Is added to bag!</div>}
+      {isAddedToBag && <div className="cart-pop-up-message">{text[language]?.itemadded}</div>}
 
       <h4 className="prod-name">{product.name}</h4>
       <div className="prod-rating">⭐ {product.rating}</div>
@@ -122,6 +171,12 @@ function ProductCard({ product, addToCart }) {
 
 // ProductGrid component
 function ProductGrid({ itemsPerPage = 6, relatedItems = [] }) {
+
+ 
+  const { language} = useLanguage(); // Using Language Context
+
+
+  
   const { category } = useParams();
   const navigate = useNavigate();
   const products = productsCategory[category] || [];
@@ -150,17 +205,17 @@ function ProductGrid({ itemsPerPage = 6, relatedItems = [] }) {
 
   return (
     <>
-
+      <Controls/>
       <ToggleList/>
       <div className="category">
         <div className="filter-sidebar">
-          <h1>Available Today</h1>
+          <h1>{text[language]?.available}</h1>
           <p>
-            <span role="img" aria-label="location">📍</span> Items may be available for pickup. {" "}
-            <a href="#">Find Nearby Store</a>
+            <span role="img" aria-label="location">📍</span> {text[language]?.pickUp} {" "}
+            <a href="#">{text[language]?.pickUpLink}</a>
           </p>
-          <h2>Filters</h2>
-          <h3>Size</h3>
+          <h2>{text[language]?.filter}</h2>
+          <h3>{text[language]?.size}</h3>
           <div className="size-options">
             {["S", "M", "L", "XL", "XXL"].map((size) => (
               <div className="size-option" key={size}>{size}</div>

@@ -1,7 +1,7 @@
 .details-page{
   display: grid;
   grid-template-columns: 3fr 2fr; 
-  height: 100vh;
+  margin-top: 120px;
 }
 .gallery{
   height: 100vh;
@@ -35,7 +35,7 @@ box-sizing: border-box;
 
 
 
-.item-details{
+.item-details_class{
   padding: 1rem;
  
 }
@@ -144,22 +144,28 @@ box-sizing: border-box;
   background-color: var(--primary-color);
 }
 
+
+
+
 .about-style{
-  
+
   padding: 1rem;
   list-style-type: square;
   padding-right: 2rem;
+  
 }
 
 .about-style h1{
   font-weight: bolder;
   font-size: 2rem;
   text-align: left;
+  
 }
 
 .about-style  p{
   font-size: 1.3rem;
   text-align: left;
+  
 }
 
 .about-style li{
@@ -169,24 +175,24 @@ box-sizing: border-box;
   
 }
 
-.discriprion{
-  
+.discription{
   padding: 1rem;
   list-style-type: square;
+  text-align: left;
 }
 
- .discriprion h2{
+ .discription h2{
   font-weight: bold;
   font-size: 1.7rem;
   text-align: left;
 }
 
-.about-style , .discriprion p{
+ .discription p{
   font-size: 1.3rem;
   text-align: left;
 }
 
-.discriprion li{
+.discription li{
   width: 100%;
   font-size: 1.2rem;
   text-align: left; 
@@ -209,7 +215,7 @@ box-sizing: border-box;
   .details-page{
     display: grid;
     grid-template-columns: 1fr; /* Two equal columns */
-    height: 100vh;
+  
   }
 
   .gallery{
