@@ -3,7 +3,7 @@ import './styles/grobal.css';
 import ProductImages from "./Display";
 import ProductList from "./ProductList";
 import ImageUpload from "./ImageUpload";
-
+import BackendProductList from "./backend-productlist";
 function AdminPage() {
   return (
     <div style={{ padding: "20px", textAlign: "center" }}>
@@ -13,6 +13,7 @@ function AdminPage() {
       <ProductImages />
       <ProductList />
     <ImageUpload />
+    <BackendProductList />
     </div>
   );
 }

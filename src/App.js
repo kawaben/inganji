@@ -10,6 +10,8 @@ import HelpButton from "./components/help";
 import AppRoutes from "./routes/route";
 import FirstParallax from "./components/firstPallarax";
 import AdminPage from "./components/AdminPage";
+import List from "./components/backend-productlist";
+import NewProductForm from "./components/NewProductForm";
 import Controls from "./components/controls";
 
 import { LanguageProvider, useLanguage } from "./components/context/LanguageContext";
@@ -21,6 +23,8 @@ function App() {
       <Routes>
         {/* Route for Admin Page */}
         <Route path="/admin" element={<AdminPage />} />
+        <Route path="/Products" element={<List />} />
+        <Route path="/NewProductForm" element={<NewProductForm />} />
         {/* Main Application */}
         <Route path="*" element={<MainApp />} />
       </Routes>

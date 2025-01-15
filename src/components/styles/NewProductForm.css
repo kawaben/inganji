@@ -1,0 +1,66 @@
+.form-container {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #e02a2a;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    text-align: center;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  input,
+  textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  textarea {
+    resize: vertical;
+  }
+  
+  button {
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  button:hover {
+    background-color: #218838;
+  }
+  
+  .message {
+    text-align: center;
+    color: green;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+  
+  .message.error {
+    color: red;
+  }
+  .form-group input[type="file"] {
+    border: none;
+    padding: 5px;
+  }
+    
