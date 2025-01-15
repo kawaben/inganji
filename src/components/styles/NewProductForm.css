@@ -1,4 +1,4 @@
-.form-container {
+.new-product-form-container {
     max-width: 500px;
     margin: 20px auto;
     padding: 20px;
@@ -11,7 +11,7 @@
     text-align: center;
   }
   
-  .form-group {
+  .new-product-form-group {
     margin-bottom: 15px;
   }
   
@@ -21,7 +21,7 @@
     font-weight: bold;
   }
   
-  input,
+ .new-product-form-container input,
   textarea {
     width: 100%;
     padding: 10px;
@@ -29,11 +29,11 @@
     border-radius: 4px;
   }
   
-  textarea {
+  .new-product-form-container textarea {
     resize: vertical;
   }
   
-  button {
+  .new-product-form-container button {
     width: 100%;
     padding: 10px;
     background-color: #28a745;
@@ -45,7 +45,7 @@
     transition: background-color 0.2s ease-in-out;
   }
   
-  button:hover {
+  .new-product-form-container button:hover {
     background-color: #218838;
   }
   
@@ -59,7 +59,7 @@
   .message.error {
     color: red;
   }
-  .form-group input[type="file"] {
+  .new-product-form-group input[type="file"] {
     border: none;
     padding: 5px;
   }
