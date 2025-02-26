@@ -8,14 +8,13 @@ const SearchPage = () => {
   const { language} = useLanguage(); // Using Language Context
   const [searchQuery, setSearchQuery] = useState("");
   const items = [
-    "Apple",
-    "Banana",
-    "Cherry",
-    "Date",
-    "Elderberry",
-    "Fig",
-    "Grape",
-    "Honeydew",
+    "Tshirt",
+    "Shoes",
+    "Jacket",
+    "Hat",
+    "Underwear",
+    "Glasses",
+    
   ];
 
   const text = {
@@ -38,7 +37,7 @@ const SearchPage = () => {
         <h1>{text[language]?.title}</h1>
         <input
           type="text"
-          placeholder={text[language]?.placeholder || "Search"} // Use fallback if links[language]?.aboutus is undefined
+          placeholder={text[language]?.placeholder || "Search"} 
           value={searchQuery}
           onChange={handleSearch}
           className="searchBar"

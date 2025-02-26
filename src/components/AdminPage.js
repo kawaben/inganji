@@ -4,6 +4,7 @@ import ProductImages from "./Display";
 import ProductList from "./ProductList";
 import ImageUpload from "./ImageUpload";
 import BackendProductList from "./backend-productlist";
+import NewProductCard from "./test"
 function AdminPage() {
   return (
     <div style={{ padding: "20px", textAlign: "center" }}>
@@ -14,6 +15,7 @@ function AdminPage() {
       <ProductList />
     <ImageUpload />
     <BackendProductList />
+   
     </div>
   );
 }

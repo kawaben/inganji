@@ -17,9 +17,9 @@ const CartPage = () => {
   };
 
   const [cartItems, setCartItems] = useState([
-    { id: 1, name: "Apple", price: 1.5, quantity: 2 },
-    { id: 2, name: "Banana", price: 1.0, quantity: 3 },
-    { id: 3, name: "Cherry", price: 2.0, quantity: 1 },
+    { id: 1, name: "Tshirt", price: 75, quantity: 2 },
+    { id: 2, name: "Beanie", price: 75, quantity: 3 },
+    { id: 3, name: "Glasses", price: 75, quantity: 1 },
   ]);
 
   const handleQuantityChange = (id, delta) => {

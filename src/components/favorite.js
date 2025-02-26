@@ -19,9 +19,9 @@ const FavoriteItemPage = () => {
 
 
   const [favorites, setFavorites] = useState([
-    { id: 1, name: "Apple", description: "A sweet red fruit" },
-    { id: 2, name: "Banana", description: "A tropical yellow fruit" },
-    { id: 3, name: "Cherry", description: "A small red stone fruit" },
+    { id: 1, name: "Beanie", description: "An addidas grey beanie" },
+    { id: 2, name: "Socks", description: "A comfy contractin sockst" },
+    { id: 3, name: "Water Bottle", description: "A black workout water bottle" },
   ]);
 
   const removeFavorite = (id) => {
