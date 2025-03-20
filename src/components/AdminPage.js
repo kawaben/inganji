@@ -8,7 +8,7 @@ import NewProductCard from "./test"
 function AdminPage() {
   return (
     <div style={{ padding: "20px", textAlign: "center" }}>
-      <h1>Admin Page</h1>
+      <h1>ADMINSTRATION</h1>
       <p>Welcome, Admin! Manage your application here.</p>
       {/* Add admin features and functionality here */}
       <ProductImages />
