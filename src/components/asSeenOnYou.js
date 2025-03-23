@@ -27,10 +27,10 @@ const AsSeenOnYou = () => {
 
   const images = [
     { id: 1, imgSrc: `${process.env.PUBLIC_URL}/images/5.jpg`, handle: '@kabagemabenj' },
-    { id: 2, imgSrc: `${process.env.PUBLIC_URL}/images/12.jpg`, handle: '@Maham.Qureshi_' },
-    { id: 3, imgSrc: `${process.env.PUBLIC_URL}/images/9.jpg`, handle: '@Shereethomas30' },
-    { id: 4, imgSrc: `${process.env.PUBLIC_URL}/images/7.jpg`, handle: '@Lenaruppel' },
-    { id: 5, imgSrc: `${process.env.PUBLIC_URL}/images/14.jpg`, handle: '@Blackandtweedblog' },
+    { id: 2, imgSrc: `${process.env.PUBLIC_URL}/images/12.jpg`, handle: '@kabagemabenj' },
+    { id: 3, imgSrc: `${process.env.PUBLIC_URL}/images/15.jpg`, handle: '@kabagemabenj' },
+    { id: 4, imgSrc: `${process.env.PUBLIC_URL}/images/16.jpg`, handle: '@kabagemabenj' },
+    { id: 5, imgSrc: `${process.env.PUBLIC_URL}/images/7.jpg`, handle: '@kabagemabenj' },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
