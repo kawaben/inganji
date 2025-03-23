@@ -8,32 +8,32 @@ import { useLanguage } from './context/LanguageContext';
 const products = [
   {
     id: 1,
-    name: 'Classic Denim Jacket',
-    price: 79.99,
-    image: `${process.env.PUBLIC_URL}/images/6.jpg`,
+    name: 'Pen Art on White Tee',
+    price: 15.00,
+    image: `${process.env.PUBLIC_URL}/images/6.png`,
   },
   {
     id: 2,
-    name: 'Vintage Blue Jeans',
-    price: 59.99,
+    name: 'King of Clubs',
+    price: 15.00,
     image: `${process.env.PUBLIC_URL}/images/10.jpg`,
   },
   {
     id: 3,
-    name: 'Cotton Crew Neck T-Shirt',
-    price: 25.99,
+    name: 'Queen of clubs(Color)',
+    price: 15.00,
     image: `${process.env.PUBLIC_URL}/images/13.jpg`,
   },
   {
     id: 4,
-    name: 'Leather Belt',
-    price: 35.99,
+    name: 'I am King',
+    price: 15.00,
     image: `${process.env.PUBLIC_URL}/images/11.jpg`,
   },
   {
     id: 5,
-    name: 'Summer Beanie',
-    price: 35.99,
+    name: 'Gta PK',
+    price: 15.00,
     image: `${process.env.PUBLIC_URL}/images/14.jpg`,
   },
 ];
@@ -64,8 +64,8 @@ const products = [
             className="product-card"
             onClick={() => handleCardClick(product.id)}
 
-            tabIndex="0" // Make the div focusable
-            role="button" // Indicate this element is interactive
+            tabIndex="0" 
+            role="button" 
             aria-label={`View details for ${product.name}`}
             
           >

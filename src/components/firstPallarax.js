@@ -41,7 +41,6 @@ const FirstParallax = () => {
           key={index}
           image={section.image}
           title={section.title}
-          description={section.description}
         />
       ))}
      

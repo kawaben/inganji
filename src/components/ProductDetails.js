@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { useParams , Link} from 'react-router-dom';
 import './styles/ProductDetails.css';
 import './styles/grobal.css';
 import ToggleList from './TopMenuBar';
@@ -10,32 +10,32 @@ import { useLanguage } from "./context/LanguageContext";
 
 const productDetails = {
   1: {
-    name: 'Classic Denim Jacket',
-    brand: "INGANJI® Premium",
-    price: 79.99,
+    name: 'Pen Art on White Tee',
+    brand: "Nuovi Re® Premium",
+    price: 15.00,
     images: ['/images/1.jpg',
-      '/images/2.jpg',
-      '/images/3.jpg',
-      '/images/4.jpg',
-      '/images/5.jpg',],
-      colors: [{ name: 'Black', hex: '#000' }],
+      '/images/6.png',
+      '/images/7.jpg',
+      '/images/6.png',
+      '/images/1.jpg',],
+      colors: [{ name: 'White', hex: '#fff' }],
     sizes: [30, 32, 34, 36, 38],
     lengths: [30, 32],
-    description: 'A classic denim jacket with premium stitching.',
+    description: 'A classic White Tee with a Pen Art Print.',
   },
   2: {
-    name: 'Vintage Blue Jeans',
-    brand: "INGANJI® Premium",
-    price: 59.99,
-    images: ['/images/1.jpg',
-      '/images/2.jpg',
-      '/images/3.jpg',
-      '/images/4.jpg',
+    name: 'King of clubs',
+    brand: "Nuovi Re® Premium",
+    price: 15.00,
+    images: ['/images/10.jpg',
+      '/images/10(color).jpg',
+      '/images/10(mu).jpg',
+      '/images/10(black).jpg',
       '/images/5.jpg',],
-      colors: [{ name: 'Black', hex: '#000' }],
+      colors: [{ name: 'White', hex: '#fff' },{ name: 'black', hex: '#000' }],
     sizes: [30, 32, 34, 36, 38],
     lengths: [30, 32],
-    description: 'Comfortable vintage-style blue jeans.',
+    description: 'Comfortable vintage-Baggy Tee.',
   },
   // Add more details
 };
@@ -68,7 +68,10 @@ function ProductDetails() {
   if (!product) {
     return <div className='product-not-found'>
       <p>Sorry This Product Is Currentry Unavairable</p>
-      <button>Go Back</button>
+      <Link>
+      <button to="/">Go Back</button>
+      </Link>
+      
       
       </div>;
   }
@@ -158,26 +161,20 @@ function ProductDetails() {
 
             <ul>
               <li>A baggy silhouette that draws inspiration from '90s style</li>
-              <li>Made with non-stretch denim</li>
+         
               </ul>   
         </div>
         
         <div className='discription'>
               <div>
                   <h2>{text[language]?.fit}</h2>
-                  <p>Baggy Through The Seat And Thigh</p>
-                  <p>Sits At Your Waist</p>
-                  <p>Wide leg</p>
-                  <p>Front rise: 12",Knee: 23 1/2",Leg opening: 19",Measurements based on size 32</p> 
-              </div>
+                  <p>Baggy </p>
+                               </div>
 
               <div>
                   <h2>{text[language]?.madeof}</h2>
                   <p>100% Cotton</p>
-                  <p>Demin</p>
                   <p>Non-stretch</p>
-                  <p>5-pocket styling</p> 
-                  <p>Zip-fly</p>
                   <p>MAde In Rwanda</p>
               </div>
         </div>

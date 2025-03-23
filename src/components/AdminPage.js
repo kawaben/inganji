@@ -10,7 +10,7 @@ function AdminPage() {
     <div style={{ padding: "20px", textAlign: "center" }}>
       <h1>ADMINSTRATION</h1>
       <p>Welcome, Admin! Manage your application here.</p>
-      {/* Add admin features and functionality here */}
+      
       <ProductImages />
       <ProductList />
     <ImageUpload />

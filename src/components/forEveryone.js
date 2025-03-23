@@ -61,8 +61,8 @@ function ShopCategories  ()  {
                 <div className="shop-item" 
                 key={category.category}
                 onClick={() => handleCardClick(category.category)}
-                tabIndex="0" // Make the div focusable
-                role="button" // Indicate this element is interactive
+                tabIndex="0" 
+                role="button" 
                 aria-label={`View details for ${category.category}`}
 
                 
